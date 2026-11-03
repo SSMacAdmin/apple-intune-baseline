@@ -1,0 +1,7548 @@
+{
+ "commit": "09f249a06e7e3289930bf6d05f38fb562f748ebf 2026-09-17",
+ "source": "https://github.com/apple/device-management (release)",
+ "types": {
+  ".GlobalPreferences": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "CommonPayloadKeys": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "TopLevel": {
+   "keys": {
+    "PayloadRemovalDisallowed": {
+     "iOS": {
+      "supervised": true
+     }
+    },
+    "PayloadScope": {
+     "macOS": {
+      "introduced": "10.8"
+     }
+    },
+    "TargetDeviceType": {
+     "iOS": {
+      "introduced": "12.2"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.ADCertificate.managed": {
+   "keys": {
+    "AllowAllAppsAccess": {
+     "macOS": {
+      "introduced": "10.10"
+     }
+    },
+    "CertificateAcquisitionMechanism": {
+     "macOS": {
+      "introduced": "10.8"
+     }
+    },
+    "CertificateAuthority": {
+     "macOS": {
+      "introduced": "10.8"
+     }
+    },
+    "EnableAutoRenewal": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "KeyIsExtractable": {
+     "macOS": {
+      "introduced": "10.10"
+     }
+    },
+    "Keysize": {
+     "macOS": {
+      "introduced": "10.11"
+     }
+    },
+    "PromptForCredentials": {
+     "macOS": {
+      "introduced": "10.8"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.AIM.account": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "deprecated": "10.13",
+     "introduced": "10.7",
+     "removed": "10.14",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.AssetCache.managed": {
+   "keys": {
+    "AllowCacheDelete": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "AllowPersonalCaching": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "AllowSharedCaching": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "AutoActivation": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "AutoEnableTetheredCaching": {
+     "macOS": {
+      "introduced": "10.15.4"
+     }
+    },
+    "CacheLimit": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "DataPath": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "DenyTetheredCaching": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "DisplayAlerts": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "KeepAwake": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "ListenRanges": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "ListenRanges.RangesItem.first": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "ListenRanges.RangesItem.last": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "ListenRanges.RangesItem.type": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "ListenRangesOnly": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "ListenWithPeersAndParents": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "LocalSubnetsOnly": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "LogClientIdentity": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "ParentSelectionPolicy": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "Parents": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "PeerFilterRanges": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "PeerListenRanges": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "PeerLocalSubnetsOnly": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "Port": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "PublicRanges": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "deprecated": "27.0",
+     "introduced": "10.13.4",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.Dictionary": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.DirectoryService.managed": {
+   "keys": {
+    "ADAllowMultiDomainAuthFlag": {
+     "macOS": {
+      "introduced": "10.9"
+     }
+    },
+    "ADCreateMobileAccountAtLoginFlag": {
+     "macOS": {
+      "introduced": "10.9"
+     }
+    },
+    "ADForceHomeLocalFlag": {
+     "macOS": {
+      "introduced": "10.9"
+     }
+    },
+    "ADPacketSignFlag": {
+     "macOS": {
+      "introduced": "10.8"
+     }
+    },
+    "ADRestrictDDNS": {
+     "macOS": {
+      "introduced": "10.8"
+     }
+    },
+    "ADUseWindowsUNCPathFlag": {
+     "macOS": {
+      "introduced": "10.9"
+     }
+    },
+    "ADWarnUserBeforeCreatingMAFlag": {
+     "macOS": {
+      "introduced": "10.9"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.8",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.DiscRecording": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.MCX": {
+   "keys": {
+    "DestroyFVKeyOnStandby": {
+     "macOS": {
+      "introduced": "10.10"
+     }
+    },
+    "DisableGuestAccount": {
+     "macOS": {
+      "introduced": "10.7"
+     }
+    },
+    "EnableGuestAccount": {
+     "macOS": {
+      "introduced": "10.7"
+     }
+    },
+    "RequireAdminForAirPortNetworkChange": {
+     "macOS": {
+      "introduced": "10.9"
+     }
+    },
+    "RequireAdminForIBSS": {
+     "macOS": {
+      "introduced": "10.9"
+     }
+    },
+    "RequireAdminToTurnAirPortOnOff": {
+     "macOS": {
+      "introduced": "10.9"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.MCX.FileVault2": {
+   "keys": {
+    "DeferDontAskAtUserLogout": {
+     "macOS": {
+      "introduced": "10.10"
+     }
+    },
+    "ForceEnableInSetupAssistant": {
+     "macOS": {
+      "introduced": "14.0",
+      "supervised": true
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.9",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.MCX.TimeMachine": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.ManagedClient.preferences": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.NSExtension": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.13",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.SetupAssistant.managed": {
+   "keys": {
+    "SkipAccessibility": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "15.0",
+      "introduced": "11.0"
+     }
+    },
+    "SkipAppearance": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "15.0",
+      "introduced": "10.14"
+     }
+    },
+    "SkipCloudSetup": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "15.0"
+     }
+    },
+    "SkipPrivacySetup": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "15.0",
+      "introduced": "10.13.4"
+     }
+    },
+    "SkipScreenTime": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "15.0",
+      "introduced": "10.15"
+     }
+    },
+    "SkipSetupItems": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "SkipSiriSetup": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "15.0"
+     }
+    },
+    "SkipTouchIDSetup": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "15.0",
+      "introduced": "10.15"
+     }
+    },
+    "SkipTrueTone": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "15.0",
+      "introduced": "10.13.6"
+     }
+    },
+    "SkipUnlockWithWatch": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "15.0",
+      "introduced": "12.0"
+     }
+    },
+    "SkipWallpaper": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "15.0",
+      "introduced": "14.1"
+     }
+    },
+    "SkipiCloudStorageSetup": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "15.0",
+      "introduced": "10.13.4"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "14.0",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "10.12",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.ShareKitHelper": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "deprecated": "10.12",
+     "introduced": "10.9",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.SoftwareUpdate": {
+   "keys": {
+    "AllowPreReleaseInstallation": {
+     "macOS": {
+      "introduced": "10.9"
+     }
+    },
+    "AutomaticCheckEnabled": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "AutomaticDownload": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "AutomaticallyInstallAppUpdates": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "AutomaticallyInstallMacOSUpdates": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "CatalogURL": {
+     "macOS": {
+      "deprecated": "11.0",
+      "introduced": "10.7"
+     }
+    },
+    "ConfigDataInstall": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "CriticalUpdateInstall": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "restrict-software-update-require-admin-to-install": {
+     "macOS": {
+      "introduced": "10.14"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "deprecated": "26.0",
+     "introduced": "10.7",
+     "removed": "27.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.SystemConfiguration": {
+   "keys": {
+    "Proxies.ProxyCaptiveLoginAllowed": {
+     "macOS": {
+      "introduced": "10.9"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.TCC.configuration-profile-policy": {
+   "keys": {
+    "Services.Accessibility": {
+     "macOS": {
+      "deprecated": "27.0"
+     }
+    },
+    "Services.AddressBook.IdentityDict.Authorization": {
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "Services.BluetoothAlways": {
+     "macOS": {
+      "deprecated": "27.0",
+      "introduced": "11.0"
+     }
+    },
+    "Services.Camera": {
+     "macOS": {
+      "deprecated": "27.0"
+     }
+    },
+    "Services.FileProviderPresence": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "Services.ListenEvent": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "Services.MediaLibrary": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "Services.Microphone": {
+     "macOS": {
+      "deprecated": "27.0"
+     }
+    },
+    "Services.ScreenCapture": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "Services.SpeechRecognition": {
+     "macOS": {
+      "deprecated": "27.0",
+      "introduced": "10.15"
+     }
+    },
+    "Services.SystemPolicyAppBundles": {
+     "macOS": {
+      "introduced": "13.0"
+     }
+    },
+    "Services.SystemPolicyAppData": {
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "Services.SystemPolicyDesktopFolder": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "Services.SystemPolicyDocumentsFolder": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "Services.SystemPolicyDownloadsFolder": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "Services.SystemPolicyNetworkVolumes": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "Services.SystemPolicyRemovableVolumes": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.14",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.airplay": {
+   "keys": {
+    "AllowList": {
+     "iOS": {
+      "introduced": "14.5",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "11.3"
+     }
+    },
+    "AllowList.AllowListItem": {
+     "iOS": {
+      "introduced": "7.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.10"
+     }
+    },
+    "AllowList.AllowListItem.DeviceID": {
+     "iOS": {
+      "deprecated": "18.0"
+     },
+     "macOS": {
+      "deprecated": "15.0"
+     }
+    },
+    "AllowList.AllowListItem.DeviceName": {
+     "iOS": {
+      "introduced": "18.0"
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "Passwords.PasswordsItem.DeviceID": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "15.0"
+     }
+    },
+    "Passwords.PasswordsItem.DeviceName": {
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "Whitelist": {
+     "iOS": {
+      "deprecated": "14.5",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "11.3"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "7.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.10",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.airplay.security": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.airprint": {
+   "keys": {
+    "AirPrint.AirPrintItem.ForceTLS": {
+     "iOS": {
+      "introduced": "11.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AirPrint.AirPrintItem.IPAddress": {
+     "iOS": {
+      "introduced": "7.0"
+     }
+    },
+    "AirPrint.AirPrintItem.Port": {
+     "iOS": {
+      "introduced": "11.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AirPrint.AirPrintItem.ResourcePath": {
+     "iOS": {
+      "introduced": "7.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "7.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.10",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.apn.managed": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "deprecated": "7.0",
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.app.lock": {
+   "keys": {
+    "App.Options": {
+     "iOS": {
+      "introduced": "7.0"
+     }
+    },
+    "App.Options.EnableVoiceControl": {
+     "iOS": {
+      "introduced": "13.0"
+     }
+    },
+    "App.UserEnabledOptions": {
+     "iOS": {
+      "introduced": "7.0"
+     }
+    },
+    "App.UserEnabledOptions.VoiceControl": {
+     "iOS": {
+      "introduced": "13.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "6.0",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.applicationaccess": {
+   "keys": {
+    "allowARDRemoteManagementModification": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "allowAccountModification": {
+     "iOS": {
+      "introduced": "7.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "allowActivityContinuation": {
+     "iOS": {
+      "introduced": "8.0"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "allowAddingGameCenterFriends": {
+     "iOS": {
+      "introduced": "4.2.1",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "allowAirDrop": {
+     "iOS": {
+      "introduced": "7.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "allowAirPlayIncomingRequests": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "12.3"
+     }
+    },
+    "allowAirPrint": {
+     "iOS": {
+      "introduced": "11.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowAirPrintCredentialsStorage": {
+     "iOS": {
+      "introduced": "11.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowAirPrintiBeaconDiscovery": {
+     "iOS": {
+      "introduced": "11.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowAppCellularDataModification": {
+     "iOS": {
+      "introduced": "7.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowAppClips": {
+     "iOS": {
+      "introduced": "14.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowAppInstallation": {
+     "iOS": {
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowAppRemoval": {
+     "iOS": {
+      "introduced": "4.2.1",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowAppleIntelligenceReport": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "18.4",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "15.4"
+     }
+    },
+    "allowApplePersonalizedAdvertising": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "12.0"
+     }
+    },
+    "allowAppsToBeHidden": {
+     "iOS": {
+      "introduced": "18.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowAppsToBeLocked": {
+     "iOS": {
+      "introduced": "18.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowAssistant": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "5.0"
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "14.0"
+     }
+    },
+    "allowAssistantUserGeneratedContent": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "7.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowAssistantWhileLocked": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "5.1"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowAutoCorrection": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "8.1.3",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowAutoDim": {
+     "iOS": {
+      "introduced": "17.4",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowAutoUnlock": {
+     "iOS": {
+      "introduced": "14.5"
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "allowAutomaticAppDownloads": {
+     "iOS": {
+      "introduced": "9.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowAutomaticScreenSaver": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowBluetoothModification": {
+     "iOS": {
+      "introduced": "11.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "13.0"
+     }
+    },
+    "allowBluetoothSharingModification": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "allowBookstore": {
+     "iOS": {
+      "introduced": "6.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "allowBookstoreErotica": {
+     "iOS": {
+      "introduced": "6.0"
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "allowCallRecording": {
+     "iOS": {
+      "introduced": "18.1",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "allowCamera": {
+     "macOS": {
+      "introduced": "10.11"
+     }
+    },
+    "allowCellularPlanModification": {
+     "iOS": {
+      "introduced": "11.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowChat": {
+     "iOS": {
+      "introduced": "5.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowCloudAddressBook": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "allowCloudBackup": {
+     "iOS": {
+      "introduced": "5.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowCloudBookmarks": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "allowCloudCalendar": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "allowCloudDesktopAndDocuments": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.12.4"
+     }
+    },
+    "allowCloudDocumentSync": {
+     "iOS": {
+      "introduced": "5.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.11"
+     }
+    },
+    "allowCloudFreeform": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "allowCloudKeychainSync": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "allowCloudMail": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "allowCloudNotes": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "allowCloudPhotoLibrary": {
+     "iOS": {
+      "introduced": "9.0"
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "allowCloudPrivateRelay": {
+     "iOS": {
+      "introduced": "15.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "12.0"
+     }
+    },
+    "allowCloudReminders": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "allowContentCaching": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "allowContinuousPathKeyboard": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "13.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowDefaultBrowserModification": {
+     "iOS": {
+      "introduced": "18.2",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowDefaultCallingAppModification": {
+     "iOS": {
+      "introduced": "18.4",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowDefaultMessagingAppModification": {
+     "iOS": {
+      "introduced": "18.4",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowDefinitionLookup": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "8.1.3",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "10.11"
+     }
+    },
+    "allowDeviceNameModification": {
+     "iOS": {
+      "introduced": "9.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "allowDeviceSleep": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowDiagnosticSubmission": {
+     "iOS": {
+      "introduced": "6.0"
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "allowDiagnosticSubmissionModification": {
+     "iOS": {
+      "introduced": "9.3.2",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowDictation": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "10.3",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "10.13"
+     }
+    },
+    "allowESIMModification": {
+     "iOS": {
+      "introduced": "12.1",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowESIMOutgoingTransfers": {
+     "iOS": {
+      "introduced": "18.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowEnablingRestrictions": {
+     "iOS": {
+      "introduced": "8.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowEnterpriseAppTrust": {
+     "iOS": {
+      "introduced": "9.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowEnterpriseBookBackup": {
+     "iOS": {
+      "introduced": "8.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowEnterpriseBookMetadataSync": {
+     "iOS": {
+      "introduced": "8.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowEraseContentAndSettings": {
+     "iOS": {
+      "introduced": "8.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "12.0"
+     }
+    },
+    "allowExplicitContent": {
+     "iOS": {
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "allowExternalIntelligenceIntegrations": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "18.2"
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "15.2"
+     }
+    },
+    "allowExternalIntelligenceIntegrationsSignIn": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "18.2"
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "15.2"
+     }
+    },
+    "allowFileSharingModification": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "allowFilesNetworkDriveAccess": {
+     "iOS": {
+      "introduced": "13.1",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowFilesUSBDriveAccess": {
+     "iOS": {
+      "introduced": "13.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowFindMyDevice": {
+     "iOS": {
+      "introduced": "13.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "allowFindMyFriends": {
+     "iOS": {
+      "introduced": "13.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "allowFindMyFriendsModification": {
+     "iOS": {
+      "introduced": "7.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowFingerprintForUnlock": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "10.12.4"
+     }
+    },
+    "allowFingerprintModification": {
+     "iOS": {
+      "introduced": "8.3",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "allowGameCenter": {
+     "iOS": {
+      "introduced": "6.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "allowGenmoji": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "18.0",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "15.0"
+     }
+    },
+    "allowGlobalBackgroundFetchWhenRoaming": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowHostPairing": {
+     "iOS": {
+      "introduced": "7.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowImagePlayground": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "18.0",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "15.0"
+     }
+    },
+    "allowImageWand": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "18.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowInAppPurchases": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowInternetSharingModification": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "allowKeyboardShortcuts": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "9.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowListedAppBundleIDs": {
+     "iOS": {
+      "deprecated": "27.0",
+      "introduced": "15.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowLiveVoicemail": {
+     "iOS": {
+      "introduced": "17.2",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "allowLocalUserCreation": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "allowLockScreenControlCenter": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowLockScreenNotificationsView": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowLockScreenTodayView": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowMailPrivacyProtection": {
+     "iOS": {
+      "introduced": "15.2",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowMailSmartReplies": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "18.4",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "15.4"
+     }
+    },
+    "allowMailSummary": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "18.1",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "15.1"
+     }
+    },
+    "allowManagedAppsCloudSync": {
+     "iOS": {
+      "introduced": "8.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowManagedToWriteUnmanagedContacts": {
+     "iOS": {
+      "introduced": "12.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowMarketplaceAppInstallation": {
+     "iOS": {
+      "introduced": "17.4",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowMediaSharingModification": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "15.1"
+     }
+    },
+    "allowMultiplayerGaming": {
+     "iOS": {
+      "introduced": "4.1",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "allowMusicService": {
+     "iOS": {
+      "introduced": "9.3",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "allowNFC": {
+     "iOS": {
+      "introduced": "14.2",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowNews": {
+     "iOS": {
+      "introduced": "9.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowNotesTranscription": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "18.4",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "15.4"
+     }
+    },
+    "allowNotesTranscriptionSummary": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "18.3",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "15.3"
+     }
+    },
+    "allowNotificationsModification": {
+     "iOS": {
+      "introduced": "9.3",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowOTAPKIUpdates": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowOpenFromManagedToUnmanaged": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowOpenFromUnmanagedToManaged": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowPairedWatch": {
+     "iOS": {
+      "introduced": "9.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowPassbookWhileLocked": {
+     "iOS": {
+      "introduced": "6.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowPasscodeModification": {
+     "iOS": {
+      "introduced": "9.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "allowPasswordAutoFill": {
+     "iOS": {
+      "introduced": "12.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.14"
+     }
+    },
+    "allowPasswordProximityRequests": {
+     "iOS": {
+      "introduced": "12.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.14"
+     }
+    },
+    "allowPasswordSharing": {
+     "iOS": {
+      "introduced": "12.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.14"
+     }
+    },
+    "allowPersonalHotspotModification": {
+     "iOS": {
+      "introduced": "12.2",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowPersonalizedHandwritingResults": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "18.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowPhotoStream": {
+     "iOS": {
+      "deprecated": "17.0",
+      "introduced": "5.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowPodcasts": {
+     "iOS": {
+      "introduced": "8.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowPredictiveKeyboard": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "8.1.3",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowPrinterSharingModification": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "allowProximitySetupToNewDevice": {
+     "iOS": {
+      "introduced": "11.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowRCSMessaging": {
+     "iOS": {
+      "introduced": "18.1",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowRadioService": {
+     "iOS": {
+      "introduced": "9.3",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowRapidSecurityResponseInstallation": {
+     "iOS": {
+      "deprecated": "26.0",
+      "introduced": "16.0",
+      "removed": "27.0",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.0",
+      "introduced": "13.0",
+      "removed": "27.0"
+     }
+    },
+    "allowRapidSecurityResponseRemoval": {
+     "iOS": {
+      "deprecated": "26.0",
+      "introduced": "16.0",
+      "removed": "27.0",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.0",
+      "introduced": "13.0",
+      "removed": "27.0"
+     }
+    },
+    "allowRemoteAppPairing": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowRemoteAppleEventsModification": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "allowRemoteScreenObservation": {
+     "iOS": {
+      "introduced": "9.3"
+     },
+     "macOS": {
+      "introduced": "10.14.4"
+     }
+    },
+    "allowRosettaUsageAwareness": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "26.4"
+     }
+    },
+    "allowSafari": {
+     "iOS": {
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowSafariHistoryClearing": {
+     "iOS": {
+      "introduced": "26.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "allowSafariPrivateBrowsing": {
+     "iOS": {
+      "introduced": "26.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "allowSafariSummary": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "18.4",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "15.4"
+     }
+    },
+    "allowSatelliteConnection": {
+     "iOS": {
+      "introduced": "18.2",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowScreenShot": {
+     "iOS": {
+      "introduced": "3.1"
+     },
+     "macOS": {
+      "introduced": "10.14.4"
+     }
+    },
+    "allowSharedDeviceTemporarySession": {
+     "iOS": {
+      "introduced": "13.4",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowSharedStream": {
+     "iOS": {
+      "introduced": "6.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowSiriAI": {
+     "iOS": {
+      "deprecated": "27.0",
+      "introduced": "27.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowSpellCheck": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "8.1.3",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowSpotlightInternetResults": {
+     "iOS": {
+      "introduced": "8.0"
+     },
+     "macOS": {
+      "introduced": "10.11"
+     }
+    },
+    "allowStartupDiskModification": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "allowSystemAppRemoval": {
+     "iOS": {
+      "introduced": "11.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowTimeMachineBackup": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "allowUIAppInstallation": {
+     "iOS": {
+      "introduced": "9.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowUIConfigurationProfileInstallation": {
+     "iOS": {
+      "introduced": "6.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "13.0"
+     }
+    },
+    "allowUSBRestrictedMode": {
+     "iOS": {
+      "introduced": "11.4.1",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "13.0"
+     }
+    },
+    "allowUniversalControl": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "13.0"
+     }
+    },
+    "allowUnmanagedToReadManagedContacts": {
+     "iOS": {
+      "introduced": "12.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowUnpairedExternalBootToRecovery": {
+     "iOS": {
+      "introduced": "14.5",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowUntrustedTLSPrompt": {
+     "iOS": {
+      "introduced": "5.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowVPNCreation": {
+     "iOS": {
+      "introduced": "11.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowVideoConferencing": {
+     "iOS": {
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowVideoConferencingRemoteControl": {
+     "iOS": {
+      "introduced": "18.4",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowVisualIntelligenceSummary": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "18.3",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowVoiceDialing": {
+     "iOS": {
+      "deprecated": "17.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowWallpaperModification": {
+     "iOS": {
+      "introduced": "9.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "allowWebDistributionAppInstallation": {
+     "iOS": {
+      "introduced": "17.5",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowWritingTools": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "18.0",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "15.0"
+     }
+    },
+    "allowedCameraRestrictionBundleIDs": {
+     "iOS": {
+      "introduced": "26.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowedExternalIntelligenceWorkspaceIDs": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "18.3",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "15.3"
+     }
+    },
+    "allowiPhoneMirroring": {
+     "iOS": {
+      "introduced": "18.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "allowiPhoneWidgetsOnMac": {
+     "iOS": {
+      "introduced": "17.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowiTunes": {
+     "iOS": {
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowiTunesFileSharing": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "autonomousSingleAppModePermittedAppIDs": {
+     "iOS": {
+      "introduced": "7.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "blacklistedAppBundleIDs": {
+     "iOS": {
+      "deprecated": "15.0",
+      "introduced": "9.3",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "blockedAppBundleIDs": {
+     "iOS": {
+      "deprecated": "27.0",
+      "introduced": "15.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "deniedICCIDsForRCS": {
+     "iOS": {
+      "introduced": "26.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "deniedICCIDsForiMessageFaceTime": {
+     "iOS": {
+      "introduced": "26.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "enforcedFingerprintTimeout": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "12.0"
+     }
+    },
+    "enforcedSoftwareUpdateDelay": {
+     "iOS": {
+      "deprecated": "26.0",
+      "introduced": "11.3",
+      "removed": "27.0",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.0",
+      "introduced": "10.13.4",
+      "removed": "27.0"
+     }
+    },
+    "enforcedSoftwareUpdateMajorOSDeferredInstallDelay": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "26.0",
+      "introduced": "11.3",
+      "removed": "27.0"
+     }
+    },
+    "enforcedSoftwareUpdateMinorOSDeferredInstallDelay": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "26.0",
+      "introduced": "11.3",
+      "removed": "27.0"
+     }
+    },
+    "enforcedSoftwareUpdateNonOSDeferredInstallDelay": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "26.0",
+      "introduced": "11.3",
+      "removed": "27.0"
+     }
+    },
+    "forceAirDropUnmanaged": {
+     "iOS": {
+      "introduced": "9.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "forceAirPlayIncomingRequestsPairingPassword": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "forceAirPlayOutgoingRequestsPairingPassword": {
+     "iOS": {
+      "introduced": "7.1"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "forceAirPrintTrustedTLSRequirement": {
+     "iOS": {
+      "introduced": "11.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "forceAssistantProfanityFilter": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "5.0",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "10.13"
+     }
+    },
+    "forceAuthenticationBeforeAutoFill": {
+     "iOS": {
+      "introduced": "11.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "forceAutomaticDateAndTime": {
+     "iOS": {
+      "introduced": "12.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "forceBypassScreenCaptureAlert": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "15.1"
+     }
+    },
+    "forceClassroomAutomaticallyJoinClasses": {
+     "iOS": {
+      "introduced": "11.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.14.4",
+      "supervised": true
+     }
+    },
+    "forceClassroomRequestPermissionToLeaveClasses": {
+     "iOS": {
+      "introduced": "11.3",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.14.4",
+      "supervised": true
+     }
+    },
+    "forceClassroomUnpromptedAppAndDeviceLock": {
+     "iOS": {
+      "introduced": "11.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.14.4",
+      "supervised": true
+     }
+    },
+    "forceClassroomUnpromptedScreenObservation": {
+     "iOS": {
+      "introduced": "11.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.14.4",
+      "supervised": true
+     }
+    },
+    "forceDelayedAppSoftwareUpdates": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "26.0",
+      "introduced": "11.0",
+      "removed": "27.0"
+     }
+    },
+    "forceDelayedMajorSoftwareUpdates": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "26.0",
+      "introduced": "11.3",
+      "removed": "27.0"
+     }
+    },
+    "forceDelayedSoftwareUpdates": {
+     "iOS": {
+      "deprecated": "26.0",
+      "introduced": "11.3",
+      "removed": "27.0",
+      "supervised": true
+     },
+     "macOS": {
+      "deprecated": "26.0",
+      "introduced": "10.13",
+      "removed": "27.0"
+     }
+    },
+    "forceEncryptedBackup": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "forceITunesStorePasswordEntry": {
+     "iOS": {
+      "deprecated": "17.0",
+      "introduced": "6.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "forceLimitAdTracking": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "forceOnDeviceOnlyDictation": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "14.5"
+     },
+     "macOS": {
+      "deprecated": "26.4",
+      "introduced": "14.0"
+     }
+    },
+    "forceOnDeviceOnlyTranslation": {
+     "iOS": {
+      "deprecated": "26.4",
+      "introduced": "15.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "forcePreserveESIMOnErase": {
+     "iOS": {
+      "introduced": "17.2",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "forceWatchWristDetection": {
+     "iOS": {
+      "introduced": "8.2"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "forceWiFiPowerOn": {
+     "iOS": {
+      "introduced": "13.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "forceWiFiToAllowedNetworksOnly": {
+     "iOS": {
+      "introduced": "14.5",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "forceWiFiWhitelisting": {
+     "iOS": {
+      "deprecated": "14.5",
+      "introduced": "10.3",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ratingApps": {
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "ratingAppsExemptedBundleIDs": {
+     "iOS": {
+      "introduced": "26.1"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ratingMovies": {
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "ratingTVShows": {
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "requireManagedPasteboard": {
+     "iOS": {
+      "introduced": "15.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "safariAcceptCookies": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "safariAllowAutoFill": {
+     "iOS": {
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "safariAllowJavaScript": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "safariAllowPopups": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "safariForceFraudWarning": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "whitelistedAppBundleIDs": {
+     "iOS": {
+      "deprecated": "15.0",
+      "introduced": "9.3",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.applicationaccess.new": {
+   "keys": {
+    "allowList": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "pathAllowList": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "pathBlackList": {
+     "macOS": {
+      "deprecated": "10.15"
+     }
+    },
+    "pathDenyList": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "pathWhiteList": {
+     "macOS": {
+      "deprecated": "10.15"
+     }
+    },
+    "whiteList": {
+     "macOS": {
+      "deprecated": "10.15"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "deprecated": "27.0",
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.appstore": {
+   "keys": {
+    "DisableSoftwareUpdateNotifications": {
+     "macOS": {
+      "introduced": "10.10"
+     }
+    },
+    "restrict-store-disable-app-adoption": {
+     "macOS": {
+      "introduced": "10.10"
+     }
+    },
+    "restrict-store-require-admin-to-install": {
+     "macOS": {
+      "deprecated": "10.14",
+      "introduced": "10.9"
+     }
+    },
+    "restrict-store-softwareupdate-only": {
+     "macOS": {
+      "introduced": "10.10"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.9",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.asam": {
+   "keys": {
+    "AllowedApplications": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "AllowedApplications.AllowedApplicationsItem.BundleIdentifier": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "AllowedApplications.AllowedApplicationsItem.TeamIdentifier": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.13.4",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.associated-domains": {
+   "keys": {
+    "Configuration.ConfigurationItem.EnableDirectDownloads": {
+     "macOS": {
+      "introduced": "11.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.15",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.caldav.account": {
+   "keys": {
+    "VPNUUID": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.carddav.account": {
+   "keys": {
+    "CardDAVAccountDescription": {
+     "macOS": {
+      "introduced": "10.7"
+     }
+    },
+    "CardDAVHostName": {
+     "macOS": {
+      "introduced": "10.7"
+     }
+    },
+    "CardDAVPassword": {
+     "macOS": {
+      "introduced": "10.7"
+     }
+    },
+    "CardDAVPort": {
+     "macOS": {
+      "introduced": "10.7"
+     }
+    },
+    "CardDAVPrincipalURL": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "CardDAVUseSSL": {
+     "macOS": {
+      "introduced": "10.7"
+     }
+    },
+    "CardDAVUsername": {
+     "macOS": {
+      "introduced": "10.7"
+     }
+    },
+    "CommunicationServiceRules": {
+     "iOS": {
+      "introduced": "10.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "CommunicationServiceRules.DefaultServiceHandlers": {
+     "iOS": {
+      "introduced": "10.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "CommunicationServiceRules.DefaultServiceHandlers.AudioCall": {
+     "iOS": {
+      "introduced": "10.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "VPNUUID": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.cellular": {
+   "keys": {
+    "APNs.APNsItem.AllowedProtocolMask": {
+     "iOS": {
+      "introduced": "10.3"
+     }
+    },
+    "APNs.APNsItem.AllowedProtocolMaskInDomesticRoaming": {
+     "iOS": {
+      "introduced": "10.3"
+     }
+    },
+    "APNs.APNsItem.AllowedProtocolMaskInRoaming": {
+     "iOS": {
+      "introduced": "10.3"
+     }
+    },
+    "APNs.APNsItem.DefaultProtocolMask": {
+     "iOS": {
+      "deprecated": "11.0",
+      "introduced": "10.3"
+     }
+    },
+    "APNs.APNsItem.EnableXLAT464": {
+     "iOS": {
+      "introduced": "16.0"
+     }
+    },
+    "APNs.APNsItem.ProxyServer": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AttachAPN.AllowedProtocolMask": {
+     "iOS": {
+      "introduced": "10.3"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "7.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.cellularprivatenetwork.managed": {
+   "keys": {
+    "CsgNetworkIdentifier": {
+     "iOS": {
+      "introduced": "18.0"
+     }
+    },
+    "NetworkIdentifier": {
+     "iOS": {
+      "introduced": "18.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "17.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.conferenceroomdisplay": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.configuration.accessibility.settings": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "27.0",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "27.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.account.caldav": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "15.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "13.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.account.carddav": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "15.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "13.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.account.exchange": {
+   "keys": {
+    "External Path": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ExternalHostName": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ExternalPort": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "LockCalendarService": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "LockContactsService": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "LockMailService": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "LockNotesService": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "LockRemindersService": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "OAuth.TokenRequestURL": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Path": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Port": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "SMIME": {
+     "iOS": {
+      "introduced": "17.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "15.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "13.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.account.google": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "15.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "13.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.account.ldap": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "15.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "13.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.account.mail": {
+   "keys": {
+    "SMIME": {
+     "iOS": {
+      "introduced": "17.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "15.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "13.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.account.subscribed-calendar": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "15.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "14.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.app.managed": {
+   "keys": {
+    "AppComposedIdentifier": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "AppConfig": {
+     "iOS": {
+      "introduced": "18.4"
+     },
+     "macOS": {
+      "introduced": "27.0"
+     }
+    },
+    "Attributes": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Attributes.Hideable": {
+     "iOS": {
+      "introduced": "18.1"
+     }
+    },
+    "Attributes.Lockable": {
+     "iOS": {
+      "introduced": "18.1"
+     }
+    },
+    "ExtensionConfigs": {
+     "iOS": {
+      "introduced": "18.4"
+     },
+     "macOS": {
+      "introduced": "27.0"
+     }
+    },
+    "IncludeInBackup": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "InstallBehavior.AllowDownloadsOverCellular": {
+     "iOS": {
+      "introduced": "26.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "InstallBehavior.Version": {
+     "iOS": {
+      "introduced": "26.0"
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "LegacyAppConfigAssetReference": {
+     "iOS": {
+      "introduced": "18.4"
+     },
+     "macOS": {
+      "introduced": "27.0"
+     }
+    },
+    "ManifestURL": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "UpdateBehavior": {
+     "iOS": {
+      "introduced": "26.0"
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "iOSApp": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "17.2",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "26.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.app.settings": {
+   "keys": {
+    "Allowed.AllowedApps": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Allowed.AllowedBinaries": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Allowed.AlwaysAllowManagedApps": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Allowed.DeniedApps": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Allowed.DeniedBinaries": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Privacy.PermissionDefaults.ANY.Accessibility": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Privacy.PermissionDefaults.ANY.LocationAccuracy": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "27.0",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "27.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.audio-accessory.settings": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "26.0",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.configuration.content-cache.settings": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "27.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.diskmanagement.settings": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "15.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.extensible-sso": {
+   "keys": {
+    "PlatformSSO": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "PlatformSSO.RegistrationToken": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "PlatformSSO.WebAuthentication": {
+     "macOS": {
+      "introduced": "27.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "27.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "27.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.external-intelligence.settings": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "26.4",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "26.4",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.intelligence.settings": {
+   "keys": {
+    "AllowImageWand": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AllowPersonalizedHandwritingResults": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AllowVisualIntelligence": {
+     "iOS": {
+      "introduced": "27.0"
+     },
+     "macOS": {
+      "introduced": "27.0"
+     }
+    },
+    "AllowVisualIntelligenceSummary": {
+     "iOS": {
+      "deprecated": "27.0",
+      "introduced": "26.4"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Apps.Calendar": {
+     "iOS": {
+      "introduced": "27.0"
+     },
+     "macOS": {
+      "introduced": "27.0"
+     }
+    },
+    "ForceOnDeviceOnlyTranslation": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "26.4",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "26.4",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.keyboard.settings": {
+   "keys": {
+    "AllowAutoCorrection": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AllowPredictiveText": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AllowSlideToType": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AllowSpellCheck": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AllowTextReplacement": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "26.4",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "26.4",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.legacy": {
+   "keys": {
+    "ProfileAssetReference": {
+     "iOS": {
+      "introduced": "27.0"
+     },
+     "macOS": {
+      "introduced": "27.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "15.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "13.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.legacy.interactive": {
+   "keys": {
+    "ProfileAssetReference": {
+     "iOS": {
+      "introduced": "27.0"
+     },
+     "macOS": {
+      "introduced": "27.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "15.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "13.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.management.status-subscriptions": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "15.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "13.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.management.test": {
+   "keys": {
+    "EchoDataAssetReference": {
+     "iOS": {
+      "introduced": "17.0"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "15.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "13.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.math.settings": {
+   "keys": {
+    "Calculator.InputModes.RPN": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Calculator.ProgrammerMode": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "18.0",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "15.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.migration-assistant.settings": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "26.4",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.network.dns-proxy": {
+   "keys": {
+    "DNSProxyUUID": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "27.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "27.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.network.dns-settings": {
+   "keys": {
+    "ProhibitDisablement": {
+     "iOS": {
+      "supervised": true
+     },
+     "macOS": {
+      "supervised": true
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "27.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "27.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.network.relay": {
+   "keys": {
+    "RelayUUID": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "27.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "27.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.network.vpn.always-on": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "27.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.configuration.network.vpn.ikev2": {
+   "keys": {
+    "EnableFallback": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "OnDemand.DisableUserOverride": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "27.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "27.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.network.vpn.ipsec": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "27.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "27.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.network.vpn.vpn-plugin": {
+   "keys": {
+    "OnDemand.DisableUserOverride": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "27.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "27.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.package": {
+   "keys": {
+    "UninstallBehavior": {
+     "macOS": {
+      "introduced": "27.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "26.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.passcode.settings": {
+   "keys": {
+    "ChangeAtNextAuth": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "13.1"
+     }
+    },
+    "CustomRegex": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "FailedAttemptsResetInMinutes": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "13.1"
+     }
+    },
+    "MaximumPasscodeAgeInDays": {
+     "iOS": {
+      "introduced": "16.2"
+     },
+     "macOS": {
+      "introduced": "13.1"
+     }
+    },
+    "MinimumComplexCharacters": {
+     "iOS": {
+      "introduced": "16.2"
+     },
+     "macOS": {
+      "introduced": "13.1"
+     }
+    },
+    "RequireAlphanumericPasscode": {
+     "iOS": {
+      "introduced": "16.2"
+     },
+     "macOS": {
+      "introduced": "13.1"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "15.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "13.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.safari.bookmarks": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "26.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "26.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.safari.extensions.settings": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "18.0",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "15.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.safari.settings": {
+   "keys": {
+    "AcceptCookies": {
+     "iOS": {
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AllowDisablingFraudWarning": {
+     "iOS": {
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AllowHistoryClearing": {
+     "iOS": {
+      "supervised": true
+     }
+    },
+    "AllowJavaScript": {
+     "iOS": {
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AllowPopups": {
+     "iOS": {
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AllowPrivateBrowsing": {
+     "iOS": {
+      "supervised": true
+     }
+    },
+    "AllowSummary": {
+     "iOS": {
+      "supervised": true
+     }
+    },
+    "Privacy": {
+     "iOS": {
+      "introduced": "27.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "27.0",
+      "supervised": true
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "26.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "26.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.screensharing.connection": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "14.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.screensharing.connection.group": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "14.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.screensharing.host.settings": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "14.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.security.certificate": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "17.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "14.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.security.identity": {
+   "keys": {
+    "AllowAllAppsAccess": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "KeyIsExtractable": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "17.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "14.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.configuration.security.passkey.attestation": {
+   "keys": {
+    "AttestationIdentityKeyIsExtractable": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "17.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "14.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.services.background-tasks": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "15.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.services.configuration-files": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "14.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.siri.settings": {
+   "keys": {
+    "AllowSiriAI": {
+     "iOS": {
+      "introduced": "27.0"
+     },
+     "macOS": {
+      "introduced": "27.0"
+     }
+    },
+    "AllowUserGeneratedContent": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AllowWhileLocked": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ForceReduceSensitiveContent": {
+     "iOS": {
+      "introduced": "27.0"
+     },
+     "macOS": {
+      "introduced": "27.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "26.4",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "26.4",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.softwareupdate.enforcement.specific": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "17.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "14.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.softwareupdate.settings": {
+   "keys": {
+    "AllowStandardUserOSUpdates": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AutomaticActions": {
+     "iOS": {
+      "supervised": true
+     }
+    },
+    "Beta": {
+     "macOS": {
+      "introduced": "15.4",
+      "supervised": true
+     }
+    },
+    "Beta.ProgramEnrollment": {
+     "iOS": {
+      "supervised": true
+     }
+    },
+    "Beta.RequireProgram": {
+     "iOS": {
+      "supervised": true
+     }
+    },
+    "Deferrals": {
+     "iOS": {
+      "supervised": true
+     }
+    },
+    "Deferrals.CombinedPeriodInDays": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Deferrals.MajorPeriodInDays": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Deferrals.MinorPeriodInDays": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Deferrals.SystemPeriodInDays": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "RapidSecurityResponse": {
+     "iOS": {
+      "supervised": true
+     }
+    },
+    "RecommendedCadence": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "18.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "15.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configuration.watch.enrollment": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "17.0",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.configuration.webcontent-filter.plugin": {
+   "keys": {
+    "ContentFilterUUID": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Filter.Browsers": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Filter.Grade": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Filter.Packets": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "27.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "27.0",
+     "supervised": true
+    }
+   }
+  },
+  "com.apple.configurationprofile.identification": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "deprecated": "15.4",
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.dashboard": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "deprecated": "10.15",
+     "introduced": "10.7",
+     "removed": "10.15",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.declarations": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "17.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "14.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.desktop": {
+   "keys": {
+    "locked": {
+     "macOS": {
+      "deprecated": "10.13"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.10",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.dnsProxy.managed": {
+   "keys": {
+    "DNSProxyUUID": {
+     "iOS": {
+      "introduced": "16.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ProviderDesignatedRequirement": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "deprecated": "27.0",
+     "introduced": "11.0",
+     "supervised": false
+    },
+    "macOS": {
+     "deprecated": "27.0",
+     "introduced": "10.15",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.dnsSettings.managed": {
+   "keys": {
+    "DNSSettings.AllowFailover": {
+     "iOS": {
+      "introduced": "26.0"
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "DNSSettings.PayloadCertificateUUID": {
+     "iOS": {
+      "introduced": "16.0"
+     },
+     "macOS": {
+      "introduced": "13.0"
+     }
+    },
+    "ProhibitDisablement": {
+     "iOS": {
+      "supervised": true
+     },
+     "macOS": {
+      "supervised": true
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "deprecated": "27.0",
+     "introduced": "14.0",
+     "supervised": false
+    },
+    "macOS": {
+     "deprecated": "27.0",
+     "introduced": "11.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.dock": {
+   "keys": {
+    "AllowDockFixupOverride": {
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "dblclickbehavior": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "dblclickbehavior-immutable": {
+     "macOS": {
+      "introduced": "10.14"
+     }
+    },
+    "minintoapp-immutable": {
+     "macOS": {
+      "introduced": "10.14"
+     }
+    },
+    "show-recents": {
+     "macOS": {
+      "introduced": "10.14"
+     }
+    },
+    "showrecents-immutable": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "windowtabbing": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "windowtabbing-immutable": {
+     "macOS": {
+      "introduced": "10.12"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.domains": {
+   "keys": {
+    "CrossSiteTrackingPreventionRelaxedApps": {
+     "iOS": {
+      "introduced": "18.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "CrossSiteTrackingPreventionRelaxedDomains": {
+     "iOS": {
+      "introduced": "16.2",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "13.1"
+     }
+    },
+    "SafariPasswordAutoFillDomains": {
+     "iOS": {
+      "introduced": "9.3",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "WebDomains": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "8.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.10",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.eas.account": {
+   "keys": {
+    "Certificate": {
+     "iOS": {
+      "introduced": "7.0"
+     }
+    },
+    "CertificateName": {
+     "iOS": {
+      "introduced": "7.0"
+     }
+    },
+    "CommunicationServiceRules": {
+     "iOS": {
+      "introduced": "10.0"
+     }
+    },
+    "CommunicationServiceRules.DefaultServiceHandlers": {
+     "iOS": {
+      "introduced": "10.0"
+     }
+    },
+    "CommunicationServiceRules.DefaultServiceHandlers.AudioCall": {
+     "iOS": {
+      "introduced": "10.0"
+     }
+    },
+    "EnableCalendars": {
+     "iOS": {
+      "introduced": "13.0"
+     }
+    },
+    "EnableCalendarsUserOverridable": {
+     "iOS": {
+      "introduced": "13.0"
+     }
+    },
+    "EnableContacts": {
+     "iOS": {
+      "introduced": "13.0"
+     }
+    },
+    "EnableContactsUserOverridable": {
+     "iOS": {
+      "introduced": "13.0"
+     }
+    },
+    "EnableMail": {
+     "iOS": {
+      "introduced": "13.0"
+     }
+    },
+    "EnableMailUserOverridable": {
+     "iOS": {
+      "introduced": "13.0"
+     }
+    },
+    "EnableNotes": {
+     "iOS": {
+      "introduced": "13.0"
+     }
+    },
+    "EnableNotesUserOverridable": {
+     "iOS": {
+      "introduced": "13.0"
+     }
+    },
+    "EnableReminders": {
+     "iOS": {
+      "introduced": "13.0"
+     }
+    },
+    "EnableRemindersUserOverridable": {
+     "iOS": {
+      "introduced": "13.0"
+     }
+    },
+    "HeaderMagic": {
+     "iOS": {
+      "deprecated": "7.0"
+     }
+    },
+    "OAuth": {
+     "iOS": {
+      "introduced": "12.0"
+     }
+    },
+    "OAuthSignInURL": {
+     "iOS": {
+      "introduced": "13.0"
+     }
+    },
+    "OAuthTokenRequestURL": {
+     "iOS": {
+      "introduced": "13.0"
+     }
+    },
+    "OverridePreviousPassword": {
+     "iOS": {
+      "introduced": "14.0"
+     }
+    },
+    "PreventAppSheet": {
+     "iOS": {
+      "introduced": "5.0"
+     }
+    },
+    "PreventMove": {
+     "iOS": {
+      "introduced": "5.0"
+     }
+    },
+    "SMIMEEnableEncryptionPerMessageSwitch": {
+     "iOS": {
+      "introduced": "12.0"
+     }
+    },
+    "SMIMEEnablePerMessageSwitch": {
+     "iOS": {
+      "deprecated": "12.0",
+      "introduced": "8.0"
+     }
+    },
+    "SMIMEEnabled": {
+     "iOS": {
+      "deprecated": "10.0",
+      "introduced": "5.0"
+     }
+    },
+    "SMIMEEncryptByDefault": {
+     "iOS": {
+      "introduced": "12.0"
+     }
+    },
+    "SMIMEEncryptByDefaultUserOverrideable": {
+     "iOS": {
+      "introduced": "12.0"
+     }
+    },
+    "SMIMEEncryptionCertificateUUID": {
+     "iOS": {
+      "introduced": "5.0"
+     }
+    },
+    "SMIMEEncryptionCertificateUUIDUserOverrideable": {
+     "iOS": {
+      "introduced": "12.0"
+     }
+    },
+    "SMIMEEncryptionEnabled": {
+     "iOS": {
+      "deprecated": "12.0",
+      "introduced": "10.3"
+     }
+    },
+    "SMIMESigningCertificateUUID": {
+     "iOS": {
+      "introduced": "5.0"
+     }
+    },
+    "SMIMESigningCertificateUUIDUserOverrideable": {
+     "iOS": {
+      "introduced": "12.0"
+     }
+    },
+    "SMIMESigningEnabled": {
+     "iOS": {
+      "introduced": "10.3"
+     }
+    },
+    "SMIMESigningUserOverrideable": {
+     "iOS": {
+      "introduced": "12.0"
+     }
+    },
+    "VPNUUID": {
+     "iOS": {
+      "introduced": "14.0"
+     }
+    },
+    "allowMailDrop": {
+     "iOS": {
+      "introduced": "9.2"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.education": {
+   "keys": {
+    "Groups.GroupsItem.ImageURL": {
+     "iOS": {
+      "deprecated": "9.3.1"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ScreenObservationPermissionModificationAllowed": {
+     "iOS": {
+      "introduced": "10.3"
+     }
+    },
+    "Users.UsersItem.FullScreenImageURL": {
+     "iOS": {
+      "deprecated": "9.3.1"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "9.3",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.14",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.ews.account": {
+   "keys": {
+    "AuthenticationCertificateUUID": {
+     "macOS": {
+      "introduced": "10.11"
+     }
+    },
+    "OAuth": {
+     "macOS": {
+      "introduced": "10.14"
+     }
+    },
+    "OAuthSignInURL": {
+     "macOS": {
+      "introduced": "10.14"
+     }
+    },
+    "PayloadCertificateUUID": {
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "allowMailDrop": {
+     "macOS": {
+      "introduced": "10.12"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.extensiblesso": {
+   "keys": {
+    "AuthenticationMethod": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "14.0",
+      "introduced": "13.0"
+     }
+    },
+    "DeniedBundleIdentifiers": {
+     "iOS": {
+      "introduced": "15.0"
+     },
+     "macOS": {
+      "introduced": "12.0"
+     }
+    },
+    "ExtensionData.allowPassword": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "ExtensionData.allowPasswordChange": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ExtensionData.allowPlatformSSOAuthFallback": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "13.0"
+     }
+    },
+    "ExtensionData.allowSmartCard": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "ExtensionData.cacheName": {
+     "iOS": {
+      "deprecated": "15.0"
+     },
+     "macOS": {
+      "deprecated": "12.0"
+     }
+    },
+    "ExtensionData.credentialUseMode": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "ExtensionData.customUsernameLabel": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "ExtensionData.delayUserSetup": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "ExtensionData.helpText": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "ExtensionData.identityIssuerAutoSelectFilter": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "ExtensionData.includeKerberosAppsInBundleIdACL": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "12.0"
+     }
+    },
+    "ExtensionData.includeManagedAppsInBundleIdACL": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "12.0"
+     }
+    },
+    "ExtensionData.monitorCredentialsCache": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "ExtensionData.performKerberosOnly": {
+     "iOS": {
+      "introduced": "16.0"
+     },
+     "macOS": {
+      "introduced": "13.0"
+     }
+    },
+    "ExtensionData.preferredKDCs": {
+     "iOS": {
+      "introduced": "15.0"
+     },
+     "macOS": {
+      "introduced": "12.0"
+     }
+    },
+    "ExtensionData.pwChangeURL": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ExtensionData.pwExpireOverride": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "12.0"
+     }
+    },
+    "ExtensionData.pwNotificationDays": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ExtensionData.pwReqComplexity": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ExtensionData.pwReqHistory": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ExtensionData.pwReqLength": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ExtensionData.pwReqMinAge": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ExtensionData.pwReqRTFData": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "ExtensionData.pwReqText": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ExtensionData.replicationTime": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "deprecated": "12.0",
+      "introduced": "11.0"
+     }
+    },
+    "ExtensionData.requireTLSForLDAP": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "ExtensionData.startInSmartCardMode": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "ExtensionData.syncLocalPassword": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ExtensionData.usePlatformSSOTGT": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "13.0"
+     }
+    },
+    "PlatformSSO": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "PlatformSSO.AccessKeyReaderGroupIdentifier": {
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "PlatformSSO.AccessKeyReaderIssuerCertificateUUID": {
+     "macOS": {
+      "introduced": "26.2"
+     }
+    },
+    "PlatformSSO.AccessKeyTerminalIdentityUUID": {
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "PlatformSSO.AllowAccessKeyExpressMode": {
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "PlatformSSO.AllowDeviceIdentifiersInAttestation": {
+     "macOS": {
+      "introduced": "15.4"
+     }
+    },
+    "PlatformSSO.AllowWebLoginPasswordSync": {
+     "macOS": {
+      "introduced": "27.0"
+     }
+    },
+    "PlatformSSO.AuthenticationGracePeriod": {
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "PlatformSSO.EnableCreateFirstUserDuringSetup": {
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "PlatformSSO.EnableRegistrationDuringSetup": {
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "PlatformSSO.FileVaultPolicy": {
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "PlatformSSO.LoginPolicy": {
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "PlatformSSO.NewUserAuthenticationMethods": {
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "PlatformSSO.NonPlatformSSOAccounts": {
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "PlatformSSO.OfflineGracePeriod": {
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "PlatformSSO.SynchronizeProfilePicture": {
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "PlatformSSO.TemporarySessionQuickLogin": {
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "PlatformSSO.UnlockPolicy": {
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "PlatformSSO.WebLoginURLAllowList": {
+     "macOS": {
+      "introduced": "27.0"
+     }
+    },
+    "RegistrationToken": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "13.0"
+     }
+    },
+    "ScreenLockedBehavior": {
+     "iOS": {
+      "introduced": "15.0"
+     },
+     "macOS": {
+      "introduced": "12.0"
+     }
+    },
+    "TeamIdentifier": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "13.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.15",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.familycontrols.contentfilter": {
+   "keys": {
+    "allowListEnabled": {
+     "macOS": {
+      "introduced": "15.2"
+     }
+    },
+    "filterAllowList": {
+     "macOS": {
+      "introduced": "15.2"
+     }
+    },
+    "filterBlacklist": {
+     "macOS": {
+      "deprecated": "15.2"
+     }
+    },
+    "filterDenyList": {
+     "macOS": {
+      "introduced": "15.2"
+     }
+    },
+    "filterWhitelist": {
+     "macOS": {
+      "deprecated": "15.2"
+     }
+    },
+    "siteAllowList": {
+     "macOS": {
+      "introduced": "15.2"
+     }
+    },
+    "siteWhitelist": {
+     "macOS": {
+      "deprecated": "15.2"
+     }
+    },
+    "whitelistEnabled": {
+     "macOS": {
+      "deprecated": "15.2"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.familycontrols.timelimits.v2": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.fileproviderd": {
+   "keys": {
+    "ManagementAllowsExternalVolumeSyncing": {
+     "macOS": {
+      "introduced": "26.4"
+     }
+    },
+    "ManagementAllowsKnownFolderSyncing": {
+     "macOS": {
+      "introduced": "15.2"
+     }
+    },
+    "ManagementAllowsRemoteSyncing": {
+     "macOS": {
+      "introduced": "26.4"
+     }
+    },
+    "ManagementDomainAutoEnablementList": {
+     "macOS": {
+      "introduced": "26.4"
+     }
+    },
+    "ManagementExternalVolumeSyncingAllowList": {
+     "macOS": {
+      "introduced": "26.4"
+     }
+    },
+    "ManagementKnownFolderSyncingAllowList": {
+     "macOS": {
+      "introduced": "15.2"
+     }
+    },
+    "ManagementRemoteSyncingAllowList": {
+     "macOS": {
+      "introduced": "26.4"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "11.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.finder": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.firstactiveethernet.managed": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.firstethernet.managed": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.font": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "7.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.9",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.gamed": {
+   "keys": {
+    "GKFeatureAddingGameCenterFriendsAllowed": {
+     "macOS": {
+      "deprecated": "10.13"
+     }
+    },
+    "GKFeatureGameCenterAllowed": {
+     "macOS": {
+      "deprecated": "10.13"
+     }
+    },
+    "GKFeatureMultiplayerGamingAllowed": {
+     "macOS": {
+      "deprecated": "10.13"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.9",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.globalethernet.managed": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "17.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.13",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.google-oauth": {
+   "keys": {
+    "CommunicationServiceRules": {
+     "iOS": {
+      "introduced": "10.0"
+     }
+    },
+    "CommunicationServiceRules.DefaultServiceHandlers": {
+     "iOS": {
+      "introduced": "10.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "CommunicationServiceRules.DefaultServiceHandlers.AudioCall": {
+     "iOS": {
+      "introduced": "10.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "VPNUUID": {
+     "iOS": {
+      "introduced": "14.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "9.3",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.homescreenlayout": {
+   "keys": {
+    "Dock.IconItem.URL": {
+     "iOS": {
+      "introduced": "11.3"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "9.3",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.ironwood.support": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "deprecated": "10.13",
+     "introduced": "10.9",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.jabber.account": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "deprecated": "10.14",
+     "introduced": "10.7",
+     "removed": "10.14",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.ldap.account": {
+   "keys": {
+    "VPNUUID": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.loginitems.managed": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.13",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.loginwindow": {
+   "keys": {
+    "AutologinPassword": {
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "AutologinUsername": {
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "DisableFDEAutoLogin": {
+     "macOS": {
+      "introduced": "10.9"
+     }
+    },
+    "DisableScreenLockImmediate": {
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "ForceCaptivePortalConnectionFromLockScreen": {
+     "macOS": {
+      "introduced": "27.0"
+     }
+    },
+    "ForceWifiConfigurationOnLockScreen": {
+     "macOS": {
+      "introduced": "27.0"
+     }
+    },
+    "LogOutDisabledWhileLoggedIn": {
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "showInputMenu": {
+     "macOS": {
+      "introduced": "10.8"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.lom": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "11.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.mail.managed": {
+   "keys": {
+    "PreventAppSheet": {
+     "iOS": {
+      "introduced": "5.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "PreventMove": {
+     "iOS": {
+      "introduced": "5.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "SMIMEEnableEncryptionPerMessageSwitch": {
+     "iOS": {
+      "introduced": "12.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "SMIMEEnablePerMessageSwitch": {
+     "iOS": {
+      "deprecated": "10.0",
+      "introduced": "8.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "SMIMEEnabled": {
+     "iOS": {
+      "introduced": "5.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "SMIMEEncryptByDefault": {
+     "iOS": {
+      "introduced": "12.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "SMIMEEncryptByDefaultUserOverrideable": {
+     "iOS": {
+      "introduced": "12.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "SMIMEEncryptionCertificateUUID": {
+     "iOS": {
+      "introduced": "5.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "SMIMEEncryptionCertificateUUIDUserOverrideable": {
+     "iOS": {
+      "introduced": "12.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "SMIMEEncryptionEnabled": {
+     "iOS": {
+      "introduced": "10.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "SMIMESigningCertificateUUID": {
+     "iOS": {
+      "introduced": "5.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "SMIMESigningCertificateUUIDUserOverrideable": {
+     "iOS": {
+      "introduced": "12.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "SMIMESigningEnabled": {
+     "iOS": {
+      "introduced": "10.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "SMIMESigningUserOverrideable": {
+     "iOS": {
+      "introduced": "12.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "VPNUUID": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "allowMailDrop": {
+     "iOS": {
+      "introduced": "9.2"
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "disableMailRecentsSyncing": {
+     "iOS": {
+      "introduced": "6.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.mcxMenuExtras": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.mcxloginscripts": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.mcxprinting": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.mdm": {
+   "keys": {
+    "AssignedManagedAppleID": {
+     "iOS": {
+      "introduced": "15.0"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "CheckInURLPinningCertificateUUIDs": {
+     "iOS": {
+      "introduced": "13.4"
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "EnrollmentMode": {
+     "iOS": {
+      "introduced": "15.0"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "ManagedAppleID": {
+     "iOS": {
+      "deprecated": "17.0",
+      "introduced": "13.1",
+      "removed": "18.0"
+     },
+     "macOS": {
+      "deprecated": "14.0",
+      "introduced": "10.15",
+      "removed": "15.0"
+     }
+    },
+    "PinningRevocationCheckRequired": {
+     "iOS": {
+      "introduced": "13.4"
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "PromptUserToAllowBootstrapTokenForAuthentication": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "RequiredAppIDForMDM": {
+     "iOS": {
+      "introduced": "15.1"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ServerURLPinningCertificateUUIDs": {
+     "iOS": {
+      "introduced": "13.4"
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.mobiledevice.passwordpolicy": {
+   "keys": {
+    "changeAtNextAuth": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "customRegex": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "minutesUntilFailedLoginReset": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.10"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "deprecated": "27.0",
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "deprecated": "27.0",
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.networkusagerules": {
+   "keys": {
+    "SIMRules": {
+     "iOS": {
+      "introduced": "13.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "9.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.notificationsettings": {
+   "keys": {
+    "NotificationSettings.NotificationSettingsItem.CriticalAlertEnabled": {
+     "iOS": {
+      "introduced": "12.0"
+     }
+    },
+    "NotificationSettings.NotificationSettingsItem.GroupingType": {
+     "iOS": {
+      "introduced": "12.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "NotificationSettings.NotificationSettingsItem.PreviewType": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "NotificationSettings.NotificationSettingsItem.ShowInCarPlay": {
+     "iOS": {
+      "introduced": "12.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "9.3",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "10.15",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.osxserver.account": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "deprecated": "12.0",
+     "introduced": "9.0",
+     "removed": "12.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.preference.security": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.10",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.preference.users": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.12",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.profileRemovalPassword": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.proxy.http.global": {
+   "keys": {
+    "ProxyCaptiveLoginAllowed": {
+     "iOS": {
+      "introduced": "7.0"
+     }
+    },
+    "ProxyPACFallbackAllowed": {
+     "iOS": {
+      "introduced": "7.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "6.0",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "10.9",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.relay.managed": {
+   "keys": {
+    "AllowDNSFailover": {
+     "iOS": {
+      "introduced": "26.0"
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "ExcludedFQDNs": {
+     "iOS": {
+      "introduced": "18.4"
+     },
+     "macOS": {
+      "introduced": "15.4"
+     }
+    },
+    "MatchFQDNs": {
+     "iOS": {
+      "introduced": "18.4"
+     },
+     "macOS": {
+      "introduced": "15.4"
+     }
+    },
+    "RelayUUID": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "UIToggleEnabled": {
+     "iOS": {
+      "introduced": "26.0"
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "deprecated": "27.0",
+     "introduced": "17.0",
+     "supervised": false
+    },
+    "macOS": {
+     "deprecated": "27.0",
+     "introduced": "14.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.screensaver": {
+   "keys": {
+    "askForPassword": {
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "askForPasswordDelay": {
+     "macOS": {
+      "introduced": "10.13"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.11",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.screensaver.user": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.11",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.secondactiveethernet.managed": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.secondethernet.managed": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.security.FDERecoveryKeyEscrow": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.13",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.security.FDERecoveryRedirect": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "deprecated": "10.13",
+     "introduced": "10.9",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.security.acme": {
+   "keys": {
+    "AllowAllAppsAccess": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "KeyIsExtractable": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "16.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "13.1",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.security.certificatepreference": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.12",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.security.certificaterevocation": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "14.2",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.security.certificatetransparency": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "12.1.1",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.14.2",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.security.firewall": {
+   "keys": {
+    "AllowSigned": {
+     "macOS": {
+      "introduced": "12.3"
+     }
+    },
+    "AllowSignedApp": {
+     "macOS": {
+      "introduced": "12.3"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.12",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.security.identitypreference": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.12",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.security.pem": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.security.pkcs1": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.security.pkcs12": {
+   "keys": {
+    "AllowAllAppsAccess": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.10"
+     }
+    },
+    "KeyIsExtractable": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.security.root": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.security.scep": {
+   "keys": {
+    "PayloadContent.AllowAllAppsAccess": {
+     "macOS": {
+      "introduced": "10.10"
+     }
+    },
+    "PayloadContent.Key Usage": {
+     "macOS": {
+      "introduced": "10.11"
+     }
+    },
+    "PayloadContent.KeyIsExtractable": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    },
+    "PayloadContent.Retries": {
+     "macOS": {
+      "introduced": "10.10"
+     }
+    },
+    "PayloadContent.RetryDelay": {
+     "macOS": {
+      "introduced": "10.10"
+     }
+    },
+    "PayloadContent.URL": {
+     "macOS": {
+      "introduced": "10.7"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.security.smartcard": {
+   "keys": {
+    "enforceSmartCard": {
+     "macOS": {
+      "introduced": "10.13.2"
+     }
+    },
+    "tokenRemovalAction": {
+     "macOS": {
+      "introduced": "10.13.4"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.12.4",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.servicemanagement": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "13.0",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.shareddeviceconfiguration": {
+   "keys": {
+    "IfLostReturnToMessage": {
+     "iOS": {
+      "deprecated": "9.3.1",
+      "introduced": "9.3"
+     }
+    },
+    "LockScreenFootnote": {
+     "iOS": {
+      "introduced": "9.3.1"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "9.3",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.sso": {
+   "keys": {
+    "Kerberos.PayloadCertificateUUID": {
+     "iOS": {
+      "introduced": "8.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "deprecated": "26.0",
+     "introduced": "7.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.subscribedcalendar.account": {
+   "keys": {
+    "VPNUUID": {
+     "iOS": {
+      "introduced": "14.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.syspolicy.kernel-extension-policy": {
+   "keys": {
+    "AllowNonAdminUserApprovals": {
+     "macOS": {
+      "introduced": "11.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.13.2",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.system-extension-policy": {
+   "keys": {
+    "NonRemovableFromUISystemExtensions": {
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "NonRemovableSystemExtensions": {
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "RemovableSystemExtensions": {
+     "macOS": {
+      "introduced": "12.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.15",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.system.logging": {
+   "keys": {
+    "Subsystems": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "System": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.12",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.systemmigration": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.12.4",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.systempolicy.control": {
+   "keys": {
+    "EnableXProtectMalwareUpload": {
+     "macOS": {
+      "introduced": "15.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.8",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.systempolicy.managed": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.8",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.systempolicy.rule": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.8",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.systempreferences": {
+   "keys": {
+    "DisabledSystemSettings": {
+     "macOS": {
+      "introduced": "13.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "deprecated": "13.0",
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.systemuiserver": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "deprecated": "11.0",
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.thirdactiveethernet.managed": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.thirdethernet.managed": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.tvremote": {
+   "keys": {
+    "AllowedRemotes": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AllowedTVs.AllowedTVsItem.TVDeviceName": {
+     "iOS": {
+      "introduced": "15.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "11.3",
+     "supervised": true
+    },
+    "macOS": {
+     "introduced": "n/a"
+    }
+   }
+  },
+  "com.apple.universalaccess": {
+   "keys": {
+    "closeViewShowPreview": {
+     "macOS": {
+      "deprecated": "10.15",
+      "introduced": "10.9"
+     }
+    },
+    "grayscale": {
+     "macOS": {
+      "deprecated": "11.0"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.9",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.vpn.managed": {
+   "keys": {
+    "AlwaysOn": {
+     "iOS": {
+      "introduced": "8.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AlwaysOn.ApplicationExceptions": {
+     "iOS": {
+      "introduced": "13.6"
+     }
+    },
+    "DNS.DNSProtocol": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "DNS.DomainName": {
+     "iOS": {
+      "introduced": "10.0"
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "DNS.PayloadCertificateUUID": {
+     "iOS": {
+      "introduced": "16.0"
+     },
+     "macOS": {
+      "introduced": "13.0"
+     }
+    },
+    "DNS.SearchDomains": {
+     "iOS": {
+      "introduced": "10.0"
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "DNS.ServerAddresses": {
+     "iOS": {
+      "introduced": "10.0"
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "DNS.ServerName": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "DNS.ServerURL": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "DNS.SupplementalMatchDomains": {
+     "iOS": {
+      "introduced": "10.0"
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "DNS.SupplementalMatchDomainsNoSearch": {
+     "iOS": {
+      "introduced": "10.0"
+     },
+     "macOS": {
+      "introduced": "10.12"
+     }
+    },
+    "IKEv2.AllowPostQuantumKeyExchangeFallback": {
+     "iOS": {
+      "introduced": "26.0"
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "IKEv2.DisableMOBIKE": {
+     "iOS": {
+      "introduced": "9.0"
+     }
+    },
+    "IKEv2.DisableRedirect": {
+     "iOS": {
+      "introduced": "9.0"
+     }
+    },
+    "IKEv2.EnableCertificateRevocationCheck": {
+     "iOS": {
+      "introduced": "9.0"
+     }
+    },
+    "IKEv2.EnableFallback": {
+     "iOS": {
+      "introduced": "13.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "IKEv2.EnablePFS": {
+     "iOS": {
+      "introduced": "9.0"
+     }
+    },
+    "IKEv2.EnforceRoutes": {
+     "iOS": {
+      "introduced": "14.2"
+     },
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "IKEv2.EnforceStrictAlgorithmSelection": {
+     "iOS": {
+      "introduced": "18.5"
+     },
+     "macOS": {
+      "introduced": "15.5"
+     }
+    },
+    "IKEv2.ExcludeAPNs": {
+     "iOS": {
+      "introduced": "16.4"
+     },
+     "macOS": {
+      "introduced": "13.3"
+     }
+    },
+    "IKEv2.ExcludeCellularServices": {
+     "iOS": {
+      "introduced": "16.4"
+     },
+     "macOS": {
+      "introduced": "13.3"
+     }
+    },
+    "IKEv2.ExcludeDeviceCommunication": {
+     "iOS": {
+      "introduced": "17.4"
+     },
+     "macOS": {
+      "introduced": "14.4"
+     }
+    },
+    "IKEv2.ExcludeLocalNetworks": {
+     "iOS": {
+      "introduced": "14.2"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "IKEv2.IKESecurityAssociationParameters.PostQuantumKeyExchangeMethods": {
+     "iOS": {
+      "introduced": "26.0"
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "IKEv2.IncludeAllNetworks": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "IKEv2.MTU": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "IKEv2.NATKeepAliveInterval": {
+     "iOS": {
+      "introduced": "9.0"
+     }
+    },
+    "IKEv2.NATKeepAliveOffloadEnable": {
+     "iOS": {
+      "introduced": "9.0"
+     }
+    },
+    "IKEv2.OnDemandUserOverrideDisabled": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "IKEv2.PPK": {
+     "iOS": {
+      "introduced": "18.0"
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "IKEv2.PPKIdentifier": {
+     "iOS": {
+      "introduced": "18.0"
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "IKEv2.PPKMandatory": {
+     "iOS": {
+      "introduced": "18.0"
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "IKEv2.ProviderDesignatedRequirement": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "IKEv2.TLSMaximumVersion": {
+     "iOS": {
+      "introduced": "11.0"
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "IKEv2.TLSMinimumVersion": {
+     "iOS": {
+      "introduced": "11.0"
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "IKEv2.UseConfigurationAttributeInternalIPSubnet": {
+     "iOS": {
+      "introduced": "9.0"
+     }
+    },
+    "IPSec.OnDemandMatchDomainsAlways": {
+     "iOS": {
+      "deprecated": "7.0"
+     }
+    },
+    "IPSec.OnDemandMatchDomainsNever": {
+     "iOS": {
+      "deprecated": "7.0"
+     }
+    },
+    "IPSec.OnDemandMatchDomainsOnRetry": {
+     "iOS": {
+      "deprecated": "7.0"
+     }
+    },
+    "TransparentProxy": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "VPN.EnforceRoutes": {
+     "iOS": {
+      "introduced": "14.2"
+     },
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "VPN.ExcludeAPNs": {
+     "iOS": {
+      "introduced": "16.4"
+     },
+     "macOS": {
+      "introduced": "13.3"
+     }
+    },
+    "VPN.ExcludeCellularServices": {
+     "iOS": {
+      "introduced": "16.4"
+     },
+     "macOS": {
+      "introduced": "13.3"
+     }
+    },
+    "VPN.ExcludeDeviceCommunication": {
+     "iOS": {
+      "introduced": "17.4"
+     },
+     "macOS": {
+      "introduced": "14.4"
+     }
+    },
+    "VPN.ExcludeLocalNetworks": {
+     "iOS": {
+      "introduced": "14.2"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "VPN.IncludeAllNetworks": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "VPN.OnDemandMatchDomainsAlways": {
+     "iOS": {
+      "deprecated": "7.0"
+     }
+    },
+    "VPN.OnDemandMatchDomainsNever": {
+     "iOS": {
+      "deprecated": "7.0"
+     }
+    },
+    "VPN.OnDemandMatchDomainsOnRetry": {
+     "iOS": {
+      "deprecated": "7.0"
+     }
+    },
+    "VPN.OnDemandUserOverrideDisabled": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "VPN.ProviderDesignatedRequirement": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.vpn.managed.applayer": {
+   "keys": {
+    "AssociatedDomains": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "CalendarDomains": {
+     "iOS": {
+      "deprecated": "13.4",
+      "introduced": "13.0"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "CellularSliceUUID": {
+     "iOS": {
+      "introduced": "18.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ContactsDomains": {
+     "iOS": {
+      "deprecated": "13.4",
+      "introduced": "13.0"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "ExcludedDomains": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "11.0"
+     }
+    },
+    "MailDomains": {
+     "iOS": {
+      "deprecated": "13.4",
+      "introduced": "13.0"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "SMBDomains": {
+     "iOS": {
+      "introduced": "13.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "7.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.9",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.vpn.managed.appmapping": {
+   "keys": {
+    "AppLayerVPNMapping.AppLayerVPNMappingItem.DesignatedRequirement": {
+     "macOS": {
+      "introduced": "10.10"
+     }
+    },
+    "AppLayerVPNMapping.AppLayerVPNMappingItem.MatchTools": {
+     "macOS": {
+      "introduced": "10.15.4"
+     }
+    },
+    "AppLayerVPNMapping.AppLayerVPNMappingItem.MatchTools.MatchToolsItem.DesignatedRequirement": {
+     "macOS": {
+      "introduced": "10.15.4"
+     }
+    },
+    "AppLayerVPNMapping.AppLayerVPNMappingItem.MatchTools.MatchToolsItem.Path": {
+     "macOS": {
+      "introduced": "10.15.4"
+     }
+    },
+    "AppLayerVPNMapping.AppLayerVPNMappingItem.MatchTools.MatchToolsItem.SigningIdentifier": {
+     "macOS": {
+      "introduced": "10.15.4"
+     }
+    },
+    "AppLayerVPNMapping.AppLayerVPNMappingItem.Path": {
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "AppLayerVPNMapping.AppLayerVPNMappingItem.SigningIdentifier": {
+     "macOS": {
+      "introduced": "10.10"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.9",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.webClip.managed": {
+   "keys": {
+    "FullScreen": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "IgnoreManifestScope": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "IsRemovable": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "Precomposed": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "TargetApplicationBundleIdentifier": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.webcontent-filter": {
+   "keys": {
+    "AllowListBookmarks": {
+     "iOS": {
+      "introduced": "14.5"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AutoFilterEnabled": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "BlacklistedURLs": {
+     "iOS": {
+      "deprecated": "14.5"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "ContentFilterUUID": {
+     "iOS": {
+      "introduced": "16.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "DenyListURLs": {
+     "iOS": {
+      "introduced": "14.5"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "FilterBrowsers": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "FilterDataProviderDesignatedRequirement": {
+     "iOS": {
+      "introduced": "n/a"
+     }
+    },
+    "FilterGrade": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "FilterPacketProviderBundleIdentifier": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "FilterPacketProviderDesignatedRequirement": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "FilterPackets": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.15"
+     }
+    },
+    "FilterType": {
+     "iOS": {
+      "introduced": "8.0"
+     }
+    },
+    "FilterURLs": {
+     "iOS": {
+      "introduced": "26.0"
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "HideDenyListURLs": {
+     "iOS": {
+      "introduced": "18.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "PermittedURLs": {
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "SafariHistoryRetentionEnabled": {
+     "iOS": {
+      "introduced": "26.0",
+      "supervised": true
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "URLFilterParameters": {
+     "iOS": {
+      "introduced": "26.0"
+     },
+     "macOS": {
+      "introduced": "26.0"
+     }
+    },
+    "WhitelistedBookmarks": {
+     "iOS": {
+      "deprecated": "14.5"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "7.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.15",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.wifi.managed": {
+   "keys": {
+    "AllowJoinBeforeFirstUnlock": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "AutoJoin": {
+     "iOS": {
+      "introduced": "5.0"
+     }
+    },
+    "CaptiveBypass": {
+     "iOS": {
+      "introduced": "10.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "DisableAssociationMACRandomization": {
+     "iOS": {
+      "introduced": "14.0"
+     },
+     "macOS": {
+      "introduced": "15.0"
+     }
+    },
+    "DisplayedOperatorName": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "10.9"
+     }
+    },
+    "DomainName": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "10.9"
+     }
+    },
+    "EAPClientConfiguration.EAPSIMNumberOfRANDs": {
+     "iOS": {
+      "introduced": "8.0"
+     }
+    },
+    "EAPClientConfiguration.OneTimeUserPassword": {
+     "iOS": {
+      "introduced": "8.0"
+     },
+     "macOS": {
+      "introduced": "10.8"
+     }
+    },
+    "EAPClientConfiguration.TLSAllowTrustExceptions": {
+     "iOS": {
+      "removed": "8.0"
+     }
+    },
+    "EAPClientConfiguration.TLSCertificateIsRequired": {
+     "iOS": {
+      "introduced": "7.0"
+     }
+    },
+    "EAPClientConfiguration.TLSMaximumVersion": {
+     "iOS": {
+      "introduced": "11.0"
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "EAPClientConfiguration.TLSMinimumVersion": {
+     "iOS": {
+      "introduced": "11.0"
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "HESSID": {
+     "iOS": {
+      "introduced": "7.0"
+     }
+    },
+    "IsHotspot": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "10.9"
+     }
+    },
+    "MCCAndMNCs": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "n/a"
+     }
+    },
+    "NAIRealmNames": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "10.9"
+     }
+    },
+    "QoSMarkingPolicy": {
+     "iOS": {
+      "introduced": "10.0"
+     },
+     "macOS": {
+      "introduced": "10.13"
+     }
+    },
+    "QoSMarkingPolicy.QoSMarkingAllowListAppIdentifiers": {
+     "iOS": {
+      "introduced": "14.5"
+     },
+     "macOS": {
+      "introduced": "14.0"
+     }
+    },
+    "QoSMarkingPolicy.QoSMarkingWhitelistedAppIdentifiers": {
+     "iOS": {
+      "deprecated": "14.5"
+     },
+     "macOS": {
+      "deprecated": "14.0"
+     }
+    },
+    "RoamingConsortiumOIs": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "10.9"
+     }
+    },
+    "SSID_STR": {
+     "iOS": {
+      "introduced": "7.0"
+     }
+    },
+    "ServiceProviderRoamingEnabled": {
+     "iOS": {
+      "introduced": "7.0"
+     },
+     "macOS": {
+      "introduced": "10.9"
+     }
+    },
+    "SetupModes": {
+     "iOS": {
+      "introduced": "n/a"
+     },
+     "macOS": {
+      "introduced": "10.7"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "4.0",
+     "supervised": false
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.xsan": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.10",
+     "supervised": false
+    }
+   }
+  },
+  "com.apple.xsan.preferences": {
+   "keys": {},
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.11",
+     "supervised": false
+    }
+   }
+  },
+  "loginwindow": {
+   "keys": {
+    "DisableLoginItemsSuppression": {
+     "macOS": {
+      "introduced": "all"
+     }
+    }
+   },
+   "payload": {
+    "iOS": {
+     "introduced": "n/a"
+    },
+    "macOS": {
+     "introduced": "10.7",
+     "supervised": false
+    }
+   }
+  }
+ }
+}

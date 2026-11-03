@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f4f5f7; --surface: #fcfcfb; --surface-2: #f0f1f3; --border: #e2e4e8; --border-strong: #cfd3d9;
+  --ink: #16181d; --ink-2: #4b4f58; --ink-3: #6e7380;
+  --accent: #2a5bd7; --accent-soft: #e8eefc;
+  --good: #0ca30c; --good-ink: #0b6b0b; --good-soft: #e6f4e6;
+  --warn: #fab219; --warn-ink: #8a5a00; --warn-soft: #fff4dc;
+  --bad: #d03b3b; --bad-ink: #a32626; --bad-soft: #fbe9e9;
+  --none: #a3a7b0; --none-soft: #eceef1;
+  --track: #e9ebee;
+  --shadow: 0 1px 2px rgba(16,24,40,.05), 0 1px 3px rgba(16,24,40,.06);
+  --radius: 10px;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #111214; --surface: #1a1a19; --surface-2: #222326; --border: #2d2f33; --border-strong: #3a3d42;
+    --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #9a9a92;
+    --accent: #6f97ff; --accent-soft: #1f2a44;
+    --good-ink: #5fd45f; --good-soft: #15291a; --warn-ink: #fac45a; --warn-soft: #33290f;
+    --bad-ink: #ff8a8a; --bad-soft: #3a1c1c; --none-soft: #26282c; --track: #2a2c30;
+    --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111214; --surface: #1a1a19; --surface-2: #222326; --border: #2d2f33; --border-strong: #3a3d42;
+  --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #9a9a92;
+  --accent: #6f97ff; --accent-soft: #1f2a44;
+  --good-ink: #5fd45f; --good-soft: #15291a; --warn-ink: #fac45a; --warn-soft: #33290f;
+  --bad-ink: #ff8a8a; --bad-soft: #3a1c1c; --none-soft: #26282c; --track: #2a2c30;
+  --shadow: none;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 var(--font); -webkit-font-smoothing: antialiased; }
+button, input, select { font: inherit; color: inherit; }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 24px 48px; }
+header.top { background: var(--surface); border-bottom: 1px solid var(--border); }
+header.top .wrap { display: flex; align-items: center; gap: 16px; padding-top: 18px; padding-bottom: 18px; flex-wrap: wrap; }
+.brand-mark { width: 34px; height: 34px; border-radius: 8px; background: var(--accent); display: grid; place-items: center; color: #fff; flex: none; }
+.titles h1 { font-size: 18px; margin: 0; font-weight: 650; letter-spacing: -.01em; }
+.titles .meta { color: var(--ink-3); font-size: 12.5px; margin-top: 2px; }
+.titles .meta span + span::before { content: "·"; margin: 0 8px; color: var(--border-strong); }
+.top-actions { margin-left: auto; display: flex; gap: 8px; }
+.btn { border: 1px solid var(--border-strong); background: var(--surface); border-radius: 8px; padding: 6px 12px; cursor: pointer; color: var(--ink-2); }
+.btn:hover { background: var(--surface-2); color: var(--ink); }
+.btn:focus-visible, .seg:focus-visible, tr.row:focus-visible, .tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.kpis { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin: 22px 0 16px; }
+.kpi { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow); cursor: pointer; text-align: left; }
+.kpi:hover { border-color: var(--border-strong); }
+.kpi.static { cursor: default; }
+.kpi .label { color: var(--ink-3); font-size: 12px; font-weight: 550; text-transform: uppercase; letter-spacing: .04em; display: flex; align-items: center; gap: 6px; }
+.kpi .value { font-size: 28px; font-weight: 650; letter-spacing: -.02em; margin-top: 4px; font-variant-numeric: tabular-nums; }
+.kpi .sub { color: var(--ink-3); font-size: 12.5px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: none; }
+
+.grid3 { display: grid; grid-template-columns: 1fr 1.1fr 1.4fr; gap: 12px; align-items: start; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 16px 18px; min-width: 0; }
+.card h2 { font-size: 14px; margin: 0 0 2px; font-weight: 650; }
+.card .hint { color: var(--ink-3); font-size: 12px; margin: 0 0 12px; }
+.donut-wrap { display: flex; align-items: center; gap: 18px; }
+.legend { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; font-size: 13px; }
+.legend button { all: unset; white-space: nowrap; display: flex; align-items: center; gap: 8px; cursor: pointer; border-radius: 6px; padding: 2px 6px; margin-left: -6px; }
+.legend button:hover { background: var(--surface-2); }
+.legend .n { margin-left: auto; padding-left: 12px; font-variant-numeric: tabular-nums; color: var(--ink-2); font-weight: 600; }
+.hbar { display: grid; gap: 8px; }
+.hbar .row2 { display: grid; grid-template-columns: minmax(0, 52%) 1fr auto; gap: 10px; align-items: center; cursor: pointer; border-radius: 6px; padding: 3px 6px; margin: 0 -6px; }
+.hbar .row2:hover { background: var(--surface-2); }
+.hbar .name { font-size: 12.5px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hbar .bar { height: 10px; background: var(--track); border-radius: 4px; overflow: hidden; display: flex; gap: 2px; }
+.hbar .bar > i { display: block; height: 100%; }
+.hbar .bar > i:first-child { border-radius: 4px 0 0 4px; }
+.hbar .bar > i:last-child { border-radius: 0 4px 4px 0; }
+.hbar .val { font-size: 12.5px; font-variant-numeric: tabular-nums; color: var(--ink-2); min-width: 44px; text-align: right; }
+.empty { color: var(--ink-3); font-size: 13px; padding: 12px 0; }
+
+.tabs { display: flex; gap: 4px; margin: 26px 0 0; border-bottom: 1px solid var(--border); }
+.tab { all: unset; cursor: pointer; padding: 10px 14px; color: var(--ink-3); font-weight: 600; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.tab[aria-selected="true"] { color: var(--ink); border-color: var(--accent); }
+.tab .count { font-weight: 500; color: var(--ink-3); margin-left: 4px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 14px 0 10px; }
+.search { flex: 1 1 260px; position: relative; }
+.search input { width: 100%; padding: 8px 12px 8px 34px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface); }
+.search svg { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: var(--ink-3); }
+select { padding: 8px 30px 8px 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface); max-width: 280px; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; min-height: 0; }
+.chip { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 3px 4px 3px 10px; font-size: 12.5px; font-weight: 550; }
+.chip button { all: unset; cursor: pointer; width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%; }
+.chip button:hover { background: rgba(0,0,0,.08); }
+
+table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+th { font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-3); font-weight: 600; background: var(--surface-2); white-space: nowrap; cursor: pointer; user-select: none; }
+th[aria-sort="ascending"]::after { content: " ↑"; } th[aria-sort="descending"]::after { content: " ↓"; }
+tr:last-child > td { border-bottom: none; }
+tr.row { cursor: pointer; }
+tr.row:hover > td { background: var(--surface-2); }
+tr.row td:first-child { font-weight: 600; }
+td.num { font-variant-numeric: tabular-nums; }
+.muted { color: var(--ink-3); }
+.mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 12.5px; }
+.caret { display: inline-block; width: 14px; color: var(--ink-3); transition: transform .15s; }
+tr.open .caret { transform: rotate(90deg); }
+
+.badge { display: inline-flex; align-items: center; gap: 5px; border-radius: 999px; padding: 2px 9px 2px 7px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.badge svg { flex: none; }
+.b-good { background: var(--good-soft); color: var(--good-ink); }
+.b-bad { background: var(--bad-soft); color: var(--bad-ink); }
+.b-warn { background: var(--warn-soft); color: var(--warn-ink); }
+.b-none { background: var(--none-soft); color: var(--ink-2); }
+
+.detail > td { background: var(--surface-2); padding: 16px 18px 20px; }
+.detail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 12px; }
+.pcard { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+.pcard h3 { margin: 0; font-size: 13.5px; display: flex; align-items: center; gap: 8px; }
+.pcard .when { color: var(--ink-3); font-size: 12px; margin: 2px 0 8px; }
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.checks li { display: grid; grid-template-columns: 18px 1fr; gap: 6px; font-size: 12.5px; padding: 3px 0; }
+.checks li .t { color: var(--ink-2); }
+.checks li .r { display: block; color: var(--ink-3); font-size: 11.5px; }
+.checks .ok { color: var(--good-ink); } .checks .ko { color: var(--bad-ink); }
+.note { font-size: 12px; color: var(--warn-ink); background: var(--warn-soft); border-radius: 6px; padding: 6px 8px; margin: 0 0 8px; }
+.remed { margin-top: 12px; }
+.remed h4 { margin: 0 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-3); }
+.remed .item { font-size: 12.5px; padding: 6px 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: 150px 90px 150px 1fr; gap: 10px; align-items: start; }
+.remed .item:first-of-type { border-top: none; }
+.passbar { display: flex; align-items: center; gap: 8px; min-width: 140px; }
+.passbar .bar { flex: 1; height: 8px; background: var(--track); border-radius: 4px; overflow: hidden; display: flex; gap: 2px; }
+.passbar .bar > i { height: 100%; display: block; }
+#tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--surface); font-size: 12px; padding: 6px 9px; border-radius: 6px; opacity: 0; transition: opacity .08s; z-index: 10; max-width: 280px; }
+footer { color: var(--ink-3); font-size: 12px; margin-top: 28px; text-align: center; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+@media (max-width: 1000px) { .grid3 { grid-template-columns: 1fr; } .kpis { grid-template-columns: repeat(2, 1fr); } .remed .item { grid-template-columns: 1fr; gap: 2px; } }
+@media (max-width: 640px) { .wrap { padding: 0 16px 40px; } .hide-sm { display: none; } }
+@media print {
+  body { background: #fff; } .top-actions, .toolbar, .tabs { display: none; }
+  .card, table, .kpi { box-shadow: none; } #checksView { display: block !important; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand-mark" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+    </div>
+    <div class="titles">
+      <h1 id="title"></h1>
+      <div class="meta" id="meta"></div>
+    </div>
+    <div class="top-actions">
+      <button class="btn" id="exportCsv" type="button">Export view (CSV)</button>
+      <button class="btn" id="theme" type="button" aria-label="Switch light or dark">Theme</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="kpis" id="kpis" aria-label="Summary"></section>
+
+  <section class="grid3">
+    <div class="card">
+      <h2>Device status</h2>
+      <p class="hint">Click a status to list those Macs.</p>
+      <div class="donut-wrap"><svg id="donut" width="150" height="150" viewBox="0 0 150 150" role="img" aria-label="Device status"></svg><ul class="legend" id="donutLegend"></ul></div>
+    </div>
+    <div class="card">
+      <h2>Compliance by section</h2>
+      <p class="hint">Share of Macs per policy section. Click to filter.</p>
+      <div class="hbar" id="sections"></div>
+    </div>
+    <div class="card">
+      <h2>Most failing checks</h2>
+      <p class="hint">Number of Macs failing. Click to see which.</p>
+      <div class="hbar" id="topFailing"></div>
+    </div>
+  </section>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tabDevices" aria-selected="true" aria-controls="devicesView">Devices<span class="count" id="countDevices"></span></button>
+    <button class="tab" role="tab" id="tabChecks" aria-selected="false" aria-controls="checksView">Checks<span class="count" id="countChecks"></span></button>
+  </div>
+
+  <section id="devicesView" role="tabpanel" aria-labelledby="tabDevices">
+    <div class="toolbar">
+      <label class="search"><span class="sr">Search devices</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Search Mac, serial or user">
+      </label>
+      <label><span class="sr">Status</span><select id="fStatus"></select></label>
+      <label><span class="sr">Section</span><select id="fSection"></select></label>
+      <label><span class="sr">Check</span><select id="fRule"></select></label>
+      <label><span class="sr">Check result</span><select id="fRuleState"><option value="fail">failing</option><option value="pass">passing</option><option value="any">any result</option></select></label>
+      <button class="btn" id="reset" type="button">Reset</button>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div style="height:10px"></div>
+    <table id="devTable">
+      <thead><tr>
+        <th data-k="device">Mac</th><th data-k="user" class="hide-sm">User</th><th data-k="serial" class="hide-sm">Serial</th>
+        <th data-k="os" class="hide-sm">macOS</th><th data-k="statusRank">Status</th><th data-k="nFail">Failing</th><th data-k="last_sync" class="hide-sm">Last check-in</th>
+      </tr></thead>
+      <tbody id="devBody"></tbody>
+    </table>
+  </section>
+
+  <section id="checksView" role="tabpanel" aria-labelledby="tabChecks" hidden>
+    <div class="toolbar">
+      <label class="search"><span class="sr">Search checks</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="qc" type="search" placeholder="Search rule or title">
+      </label>
+      <label><span class="sr">Section</span><select id="cSection"></select></label>
+      <label><span class="sr">Result</span><select id="cState"><option value="any">All checks</option><option value="fail">Failing on any Mac</option><option value="pass">Passing everywhere</option></select></label>
+    </div>
+    <table id="chkTable">
+      <thead><tr>
+        <th data-k="title">Check</th><th data-k="section" class="hide-sm">Section</th>
+        <th data-k="pass">Passing</th><th data-k="fail">Failing</th><th data-k="rate">Pass rate</th>
+      </tr></thead>
+      <tbody id="chkBody"></tbody>
+    </table>
+  </section>
+
+  <footer id="foot"></footer>
+</main>
+<div id="tip" role="tooltip"></div>
+
+<script id="report-data" type="application/json">__DATA__</script>
+<script>
+(() => {
+  "use strict";
+  const DATA = JSON.parse(document.getElementById("report-data").textContent);
+  const $ = (s, r = document) => r.querySelector(s);
+  const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const fmt = (t) => { if (!t) return "–"; const d = new Date(t); return isNaN(d) ? t : d.toLocaleString(undefined, { year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }); };
+  const pct = (a, b) => (b ? Math.round((a / b) * 100) : 0);
+  const PASS = (s) => ["compliant", "notapplicable"].includes(String(s || "").toLowerCase());
+
+  const ICON = {
+    good: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+    bad: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+    warn: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>',
+    none: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 12h12"/></svg>',
+  };
+  const STATUS = {
+    compliant: { label: "Compliant", cls: "b-good", icon: ICON.good, color: "var(--good)", rank: 3 },
+    noncompliant: { label: "Non-compliant", cls: "b-bad", icon: ICON.bad, color: "var(--bad)", rank: 0 },
+    stale: { label: "Awaiting re-check", cls: "b-warn", icon: ICON.warn, color: "var(--warn)", rank: 1 },
+    nodata: { label: "No results", cls: "b-none", icon: ICON.none, color: "var(--none)", rank: 2 },
+  };
+  const badge = (key) => { const s = STATUS[key]; return `<span class="badge ${s.cls}">${s.icon}${s.label}</span>`; };
+  const runBadge = (state) => {
+    const s = String(state || "").toLowerCase();
+    const [cls, icon] = s === "success" ? ["b-good", ICON.good] : ["fail", "error", "failed"].includes(s) ? ["b-bad", ICON.bad] : ["b-warn", ICON.warn];
+    return `<span class="badge ${cls}">${icon}${esc(state || "–")}</span>`;
+  };
+
+  // ---- model -------------------------------------------------------------
+  const devices = DATA.devices.map((d) => {
+    const pols = d.policies || [];
+    const bad = pols.filter((p) => String(p.state).toLowerCase() !== "compliant");
+    let status = "compliant";
+    if (!pols.length) status = "nodata";
+    else if (bad.length && bad.every((p) => p.stale)) status = "stale";
+    else if (bad.length) status = "noncompliant";
+    const checks = {};
+    pols.forEach((p) => (p.settings || p.failing || []).forEach((s) => { checks[s.rule] = { pass: PASS(s.state), section: p.section, title: s.title }; }));
+    const nFail = Object.values(checks).filter((c) => !c.pass).length;
+    return { ...d, status, statusRank: STATUS[status].rank, checks, nFail };
+  });
+  const sections = [...new Set(devices.flatMap((d) => d.policies.map((p) => p.section)))].sort();
+  const rules = {};
+  devices.forEach((d) => Object.entries(d.checks).forEach(([rid, c]) => {
+    const r = (rules[rid] ||= { rule: rid, title: c.title, section: c.section, pass: 0, fail: 0, devices: { pass: [], fail: [] } });
+    if (c.pass) { r.pass++; r.devices.pass.push(d.id); } else { r.fail++; r.devices.fail.push(d.id); }
+  }));
+  Object.values(rules).forEach((r) => (r.rate = pct(r.pass, r.pass + r.fail)));
+
+  // ---- header ------------------------------------------------------------
+  document.title = DATA.meta.title;
+  $("#title").textContent = DATA.meta.title;
+  $("#meta").innerHTML = [`Tenant ${esc(DATA.meta.tenant)}`, esc(DATA.meta.baseline), `Generated ${esc(fmt(DATA.generated_at))}`].map((t) => `<span>${t}</span>`).join("");
+  $("#foot").innerHTML = `Generated by apple-intune-baseline from mSCP. Compliance: ${esc(DATA.policies.length)} policies · Remediation: ${esc(DATA.scripts.length)} scripts.` +
+    (DATA.not_shown ? ` ${esc(DATA.not_shown)} more Macs not included (max_devices).` : "");
+
+  // ---- state & filters ---------------------------------------------------
+  const st = { q: "", status: "", section: "", rule: "", ruleState: "fail", sort: { k: "statusRank", dir: 1 }, open: new Set(),
+               cq: "", cSection: "", cState: "any", csort: { k: "fail", dir: -1 } };
+
+  const count = (k) => devices.filter((d) => d.status === k).length;
+  const opt = (v, t, cur) => `<option value="${esc(v)}"${v === cur ? " selected" : ""}>${esc(t)}</option>`;
+  function fillSelects() {
+    $("#fStatus").innerHTML = opt("", "All statuses", st.status) + Object.entries(STATUS).map(([k, s]) => opt(k, `${s.label} (${count(k)})`, st.status)).join("");
+    $("#fSection").innerHTML = opt("", "All sections", st.section) + sections.map((s) => opt(s, s, st.section)).join("");
+    const rs = Object.values(rules).sort((a, b) => b.fail - a.fail || a.rule.localeCompare(b.rule));
+    $("#fRule").innerHTML = opt("", "All checks", st.rule) + rs.map((r) => opt(r.rule, `${r.rule}${r.fail ? ` — ${r.fail} failing` : ""}`, st.rule)).join("");
+    $("#fRuleState").value = st.ruleState;
+    $("#fRuleState").disabled = !st.rule;
+    $("#cSection").innerHTML = opt("", "All sections", st.cSection) + sections.map((s) => opt(s, s, st.cSection)).join("");
+  }
+
+  function filtered() {
+    const q = st.q.trim().toLowerCase();
+    return devices.filter((d) => {
+      if (q && ![d.device, d.serial, d.user].some((v) => String(v || "").toLowerCase().includes(q))) return false;
+      if (st.status && d.status !== st.status) return false;
+      if (st.section) {
+        const p = d.policies.find((p) => p.section === st.section);
+        if (!p) return false;
+        if (!st.rule && st.status === "" && st.sectionState) {
+          const ok = String(p.state).toLowerCase() === "compliant";
+          if (st.sectionState === "pass" && !ok) return false;
+          if (st.sectionState === "fail" && ok) return false;
+        }
+      }
+      if (st.rule) {
+        const c = d.checks[st.rule];
+        if (!c) return false;
+        if (st.ruleState === "fail" && c.pass) return false;
+        if (st.ruleState === "pass" && !c.pass) return false;
+      }
+      return true;
+    });
+  }
+
+  function chips() {
+    const c = [];
+    if (st.q) c.push(["q", `Search: ${st.q}`]);
+    if (st.status) c.push(["status", `Status: ${STATUS[st.status].label}`]);
+    if (st.section) c.push(["section", `Section: ${st.section}${st.sectionState ? (st.sectionState === "fail" ? " · not compliant" : " · compliant") : ""}`]);
+    if (st.rule) c.push(["rule", `Check: ${st.rule} · ${st.ruleState === "any" ? "any result" : st.ruleState === "fail" ? "failing" : "passing"}`]);
+    $("#chips").innerHTML = c.map(([k, t]) => `<span class="chip">${esc(t)}<button type="button" data-clear="${k}" aria-label="Remove filter">✕</button></span>`).join("");
+  }
+
+  // ---- KPIs ---------------------------------------------------------------
+  function kpis() {
+    const n = devices.length, ok = count("compliant"), bad = count("noncompliant"), stale = count("stale");
+    const totalChecks = Object.values(rules).reduce((a, r) => a + r.pass + r.fail, 0);
+    const passed = Object.values(rules).reduce((a, r) => a + r.pass, 0);
+    const k = (lab, val, sub, color, key) => `<button class="kpi${key === null ? " static" : ""}" type="button" ${key !== null ? `data-status="${key}"` : "disabled"}>
+      <div class="label">${color ? `<span class="dot" style="background:${color}"></span>` : ""}${lab}</div><div class="value">${val}</div><div class="sub">${sub}</div></button>`;
+    $("#kpis").innerHTML =
+      k("Macs", n, `${DATA.policies.length} compliance policies`, "", "") +
+      k("Compliant", ok, `${pct(ok, n)}% of Macs`, "var(--good)", "compliant") +
+      k("Non-compliant", bad, `${pct(bad, n)}% of Macs`, "var(--bad)", "noncompliant") +
+      k("Awaiting re-check", stale, "fixed, result not refreshed yet", "var(--warn)", "stale") +
+      k("Checks passing", `${pct(passed, totalChecks)}%`, `${passed.toLocaleString()} of ${totalChecks.toLocaleString()} results`, "", null);
+  }
+
+  // ---- charts ------------------------------------------------------------
+  const tip = $("#tip");
+  function showTip(e, html) { tip.innerHTML = html; tip.style.opacity = 1; const x = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8); tip.style.left = x + "px"; tip.style.top = (e.clientY + 14) + "px"; }
+  function hideTip() { tip.style.opacity = 0; }
+  function bindTips(root) { root.querySelectorAll("[data-tip]").forEach((el) => { el.addEventListener("mousemove", (e) => showTip(e, el.dataset.tip)); el.addEventListener("mouseleave", hideTip); }); }
+
+  function donut() {
+    const order = ["compliant", "noncompliant", "stale", "nodata"].map((k) => [k, count(k)]).filter(([, v]) => v > 0);
+    const total = devices.length, R = 62, r = 44, cx = 75, cy = 75;
+    let a0 = -Math.PI / 2, out = "";
+    const gap = order.length > 1 ? 0.035 : 0;
+    order.forEach(([k, v]) => {
+      const a1 = a0 + (v / total) * Math.PI * 2;
+      const s = a0 + gap / 2, e = Math.max(s + 0.001, a1 - gap / 2), large = e - s > Math.PI ? 1 : 0;
+      const p = (rad, ang) => `${cx + rad * Math.cos(ang)} ${cy + rad * Math.sin(ang)}`;
+      const d = order.length === 1
+        ? `M ${cx} ${cy - R} A ${R} ${R} 0 1 1 ${cx - 0.01} ${cy - R} L ${cx - 0.01} ${cy - r} A ${r} ${r} 0 1 0 ${cx} ${cy - r} Z`
+        : `M ${p(R, s)} A ${R} ${R} 0 ${large} 1 ${p(R, e)} L ${p(r, e)} A ${r} ${r} 0 ${large} 0 ${p(r, s)} Z`;
+      out += `<path class="seg" tabindex="0" role="button" d="${d}" fill="${STATUS[k].color}" data-status="${k}" style="cursor:pointer" data-tip="${esc(`<b>${STATUS[k].label}</b><br>${v} of ${total} Macs (${pct(v, total)}%)`)}"><title>${STATUS[k].label}: ${v}</title></path>`;
+      a0 = a1;
+    });
+    const okp = pct(count("compliant"), total);
+    out += `<text x="75" y="72" text-anchor="middle" font-size="24" font-weight="650" fill="var(--ink)">${total ? okp + "%" : "–"}</text><text x="75" y="91" text-anchor="middle" font-size="11" fill="var(--ink-3)">compliant</text>`;
+    $("#donut").innerHTML = total ? out : `<text x="75" y="80" text-anchor="middle" fill="var(--ink-3)" font-size="12">No Macs</text>`;
+    $("#donutLegend").innerHTML = Object.entries(STATUS).map(([k, s]) => `<li><button type="button" data-status="${k}"><span class="dot" style="background:${s.color}"></span>${s.label}<span class="n">${count(k)}</span></button></li>`).join("");
+    bindTips($("#donut"));
+  }
+
+  function sectionBars() {
+    if (!sections.length) { $("#sections").innerHTML = '<div class="empty">No policy results yet.</div>'; return; }
+    $("#sections").innerHTML = sections.map((sec) => {
+      const ps = devices.map((d) => d.policies.find((p) => p.section === sec)).filter(Boolean);
+      const ok = ps.filter((p) => String(p.state).toLowerCase() === "compliant").length;
+      const stale = ps.filter((p) => String(p.state).toLowerCase() !== "compliant" && p.stale).length;
+      const bad = ps.length - ok - stale;
+      const seg = (v, c) => (v ? `<i style="width:${(v / ps.length) * 100}%;background:${c}"></i>` : "");
+      return `<div class="row2" role="button" tabindex="0" data-section="${esc(sec)}" data-tip="${esc(`<b>${sec}</b><br>${ok} compliant · ${bad} non-compliant${stale ? ` · ${stale} awaiting re-check` : ""}`)}">
+        <span class="name">${esc(sec)}</span><span class="bar">${seg(ok, "var(--good)")}${seg(stale, "var(--warn)")}${seg(bad, "var(--bad)")}</span><span class="val">${pct(ok, ps.length)}%</span></div>`;
+    }).join("");
+    bindTips($("#sections"));
+  }
+
+  function topFailing() {
+    const top = Object.values(rules).filter((r) => r.fail).sort((a, b) => b.fail - a.fail || a.rule.localeCompare(b.rule)).slice(0, 8);
+    if (!top.length) { $("#topFailing").innerHTML = '<div class="empty">No failing checks. Every deployed check passes.</div>'; return; }
+    const max = Math.max(...top.map((r) => r.fail));
+    $("#topFailing").innerHTML = top.map((r) => `<div class="row2" role="button" tabindex="0" data-rule="${esc(r.rule)}" data-tip="${esc(`<b>${r.rule}</b><br>${r.title}<br>${r.fail} failing · ${r.pass} passing`)}">
+      <span class="name" title="${esc(r.title || r.rule)}">${esc(r.title || r.rule)}</span><span class="bar" style="background:transparent"><i style="width:${(r.fail / max) * 100}%;background:var(--bad);border-radius:4px"></i></span><span class="val">${r.fail}</span></div>`).join("");
+    bindTips($("#topFailing"));
+  }
+
+  // ---- devices table -----------------------------------------------------
+  function sortRows(rows, s) {
+    return rows.sort((a, b) => { const x = a[s.k] ?? "", y = b[s.k] ?? ""; return (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y))) * s.dir; });
+  }
+  function detail(d) {
+    const remByS = {};
+    (d.remediation || []).forEach((r) => (remByS[r.section] = r));
+    const cards = d.policies.map((p) => {
+      const ok = String(p.state).toLowerCase() === "compliant";
+      const key = ok ? "compliant" : p.stale ? "stale" : "noncompliant";
+      const list = (p.settings && p.settings.length ? p.settings : p.failing).slice().sort((a, b) => PASS(a.state) - PASS(b.state));
+      return `<div class="pcard"><h3>${esc(p.section)} ${badge(key)}</h3>
+        <div class="when">Last reported ${esc(fmt(p.last_reported))} · ${p.checks} checks</div>
+        ${p.stale ? `<p class="note">${esc(p.stale)}. Company Portal → Check status refreshes it.</p>` : ""}
+        <ul class="checks">${list.map((s) => { const pass = PASS(s.state);
+          return `<li><span class="${pass ? "ok" : "ko"}" aria-label="${pass ? "passing" : "failing"}">${pass ? ICON.good : ICON.bad}</span><span><span class="t">${esc(s.title || s.rule)}</span><span class="r mono">${esc(s.rule)}</span></span></li>`; }).join("") || '<li class="muted">No setting results.</li>'}</ul></div>`;
+    }).join("");
+    const rem = (d.remediation || []).length ? `<div class="remed pcard"><h4>Remediation runs</h4>${d.remediation.map((r) =>
+      `<div class="item"><span>${esc(r.section)}</span><span>${runBadge(r.state)}</span><span class="muted">${esc(fmt(r.at))}</span><span class="mono">${esc(String(r.result || "").replace(/,/g, ", "))}</span></div>`).join("")}</div>` : "";
+    return `<div class="muted" style="margin-bottom:10px">${esc(d.model || "")} · Serial ${esc(d.serial || "–")} · macOS ${esc(d.os || "–")} · ${esc(d.user || "no user")} · Intune state: ${esc(d.compliance || "–")}</div><div class="detail-grid">${cards}</div>${rem}`;
+  }
+  function renderDevices() {
+    const rows = sortRows(filtered(), st.sort);
+    $("#countDevices").textContent = `${rows.length}/${devices.length}`;
+    $("#devBody").innerHTML = rows.map((d) => {
+      const open = st.open.has(d.id);
+      return `<tr class="row${open ? " open" : ""}" tabindex="0" data-id="${esc(d.id)}" aria-expanded="${open}">
+        <td><span class="caret">›</span> ${esc(d.device)}</td><td class="hide-sm muted">${esc(d.user || "–")}</td><td class="hide-sm mono">${esc(d.serial || "–")}</td>
+        <td class="hide-sm">${esc(d.os || "–")}</td><td>${badge(d.status)}</td><td class="num">${d.nFail || "–"}</td><td class="hide-sm muted">${esc(fmt(d.last_sync))}</td></tr>` +
+        (open ? `<tr class="detail"><td colspan="7">${detail(d)}</td></tr>` : "");
+    }).join("") || `<tr><td colspan="7" class="empty" style="text-align:center">No Macs match these filters.</td></tr>`;
+    document.querySelectorAll("#devTable th").forEach((th) => th.setAttribute("aria-sort", th.dataset.k === st.sort.k ? (st.sort.dir > 0 ? "ascending" : "descending") : "none"));
+    chips();
+  }
+
+  // ---- checks table ------------------------------------------------------
+  function renderChecks() {
+    const q = st.cq.trim().toLowerCase();
+    let rows = Object.values(rules).filter((r) => (!q || (r.rule + " " + r.title).toLowerCase().includes(q)) &&
+      (!st.cSection || r.section === st.cSection) && (st.cState === "any" || (st.cState === "fail" ? r.fail > 0 : r.fail === 0)));
+    rows = sortRows(rows, st.csort);
+    $("#countChecks").textContent = `${Object.keys(rules).length}`;
+    $("#chkBody").innerHTML = rows.map((r) => `<tr class="row" tabindex="0" data-rule="${esc(r.rule)}">
+      <td><span style="font-weight:600">${esc(r.title || r.rule)}</span><span class="mono muted" style="display:block;font-size:11.5px">${esc(r.rule)}</span></td><td class="muted hide-sm" style="white-space:nowrap">${esc(r.section)}</td>
+      <td class="num">${r.pass}</td><td class="num">${r.fail ? `<span class="badge b-bad">${ICON.bad}${r.fail}</span>` : "–"}</td>
+      <td><div class="passbar"><span class="bar"><i style="width:${r.rate}%;background:var(--good)"></i>${r.fail ? `<i style="width:${100 - r.rate}%;background:var(--bad)"></i>` : ""}</span><span class="num">${r.rate}%</span></div></td></tr>`).join("")
+      || `<tr><td colspan="5" class="empty" style="text-align:center">No checks match.</td></tr>`;
+    document.querySelectorAll("#chkTable th").forEach((th) => th.setAttribute("aria-sort", th.dataset.k === st.csort.k ? (st.csort.dir > 0 ? "ascending" : "descending") : "none"));
+  }
+
+  function render() { fillSelects(); renderDevices(); renderChecks(); }
+  function showTab(which) {
+    const dev = which === "devices";
+    $("#tabDevices").setAttribute("aria-selected", dev); $("#tabChecks").setAttribute("aria-selected", !dev);
+    $("#devicesView").hidden = !dev; $("#checksView").hidden = dev;
+  }
+  function goDevices(patch) { Object.assign(st, { status: "", section: "", sectionState: "", rule: "", ruleState: "fail" }, patch); showTab("devices"); render(); $("#devicesView").scrollIntoView({ behavior: "smooth", block: "start" }); }
+
+  // ---- events ------------------------------------------------------------
+  const act = (sel, fn) => document.addEventListener("click", (e) => { const el = e.target.closest(sel); if (el) fn(el, e); });
+  const key = (sel, fn) => document.addEventListener("keydown", (e) => { if ((e.key === "Enter" || e.key === " ") && e.target.matches(sel)) { e.preventDefault(); fn(e.target); } });
+  act("[data-status]", (el) => el.dataset.status !== undefined && goDevices({ status: el.dataset.status }));
+  key("[data-status]", (el) => goDevices({ status: el.dataset.status }));
+  act("#sections [data-section]", (el) => goDevices({ section: el.dataset.section, sectionState: "fail" }));
+  key("#sections [data-section]", (el) => goDevices({ section: el.dataset.section, sectionState: "fail" }));
+  act("#topFailing [data-rule], #chkBody [data-rule]", (el) => goDevices({ rule: el.dataset.rule, ruleState: "fail" }));
+  key("#topFailing [data-rule], #chkBody [data-rule]", (el) => goDevices({ rule: el.dataset.rule, ruleState: "fail" }));
+  const toggle = (el) => { const id = el.dataset.id; st.open.has(id) ? st.open.delete(id) : st.open.add(id); renderDevices(); };
+  act("#devBody tr.row", toggle); key("#devBody tr.row", toggle);
+  act("[data-clear]", (el) => { const k = el.dataset.clear; if (k === "q") { st.q = ""; $("#q").value = ""; } else if (k === "section") { st.section = ""; st.sectionState = ""; } else st[k] = ""; render(); });
+  act("#devTable th", (el) => { const k = el.dataset.k; st.sort = { k, dir: st.sort.k === k ? -st.sort.dir : 1 }; renderDevices(); });
+  act("#chkTable th", (el) => { const k = el.dataset.k; st.csort = { k, dir: st.csort.k === k ? -st.csort.dir : (["fail", "pass"].includes(k) ? -1 : 1) }; renderChecks(); });
+  act("#tabDevices", () => showTab("devices")); act("#tabChecks", () => showTab("checks"));
+  act("#reset", () => { $("#q").value = ""; goDevices({ q: "" }); });
+  $("#q").addEventListener("input", (e) => { st.q = e.target.value; renderDevices(); });
+  $("#qc").addEventListener("input", (e) => { st.cq = e.target.value; renderChecks(); });
+  $("#fStatus").addEventListener("change", (e) => { st.status = e.target.value; render(); });
+  $("#fSection").addEventListener("change", (e) => { st.section = e.target.value; st.sectionState = ""; render(); });
+  $("#fRule").addEventListener("change", (e) => { st.rule = e.target.value; render(); });
+  $("#fRuleState").addEventListener("change", (e) => { st.ruleState = e.target.value; render(); });
+  $("#cSection").addEventListener("change", (e) => { st.cSection = e.target.value; renderChecks(); });
+  $("#cState").addEventListener("change", (e) => { st.cState = e.target.value; renderChecks(); });
+  act("#theme", () => { const r = document.documentElement; const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; r.dataset.theme = dark ? "light" : "dark"; });
+  act("#exportCsv", () => {
+    const head = ["device", "serial", "user", "os", "status", "section", "rule", "title", "result", "last_reported"];
+    const lines = [head.join(",")];
+    filtered().forEach((d) => d.policies.forEach((p) => (p.settings && p.settings.length ? p.settings : p.failing).forEach((s) => {
+      if (st.section && p.section !== st.section) return;
+      if (st.rule && s.rule !== st.rule) return;
+      lines.push([d.device, d.serial, d.user, d.os, STATUS[d.status].label, p.section, s.rule, s.title, PASS(s.state) ? "pass" : "fail", p.last_reported]
+        .map((v) => `"${String(v ?? "").replace(/"/g, '""')}"`).join(","));
+    })));
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob(["﻿" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" }));
+    a.download = "compliance-view.csv"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  });
+
+  kpis(); donut(); sectionBars(); topFailing(); render();
+})();
+</script>
+</body>
+</html>

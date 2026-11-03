@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+__STYLE__
+<style>
+.cmp-matches { background: var(--good-soft); color: var(--good-ink); }
+.cmp-differs { background: var(--bad-soft); color: var(--bad-ink); }
+.cmp-novalue { background: var(--warn-soft); color: var(--warn-ink); }
+.cmp-na, .cmp-unknown { background: var(--none-soft); color: var(--ink-2); }
+.val { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 12.5px; word-break: break-all; }
+td .mono, td.val { overflow-wrap: anywhere; word-break: break-word; }
+.tblwrap { overflow-x: auto; max-width: 100%; }
+@media (max-width: 640px) { #macTable .num:nth-last-child(2), #ruleTable .num:nth-child(4) { display: none; } }
+.kpis { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)) !important; }
+.lead { color: var(--ink-3); font-size: 13px; margin: 10px 0 0; max-width: 900px; }
+.dist { display: flex; flex-wrap: wrap; gap: 4px; }
+.dist span { background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; font-size: 12px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand-mark" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+    </div>
+    <div class="titles"><h1 id="title"></h1><div class="meta" id="meta"></div></div>
+    <div class="top-actions">
+      <button class="btn" id="exportCsv" type="button">Export view (CSV)</button>
+      <button class="btn" id="theme" type="button" aria-label="Switch light or dark">Theme</button>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+  <p class="lead">Values the Macs reported through Intune custom attributes: the raw output of each mSCP check, compared with what that check prints when the rule is met. Inventory, not compliance: <b>no value</b> usually means the setting isn't managed, or the check reads a source that has no entry for it.</p>
+  <section class="kpis" id="kpis" aria-label="Summary"></section>
+  <section class="grid3">
+    <div class="card">
+      <h2>All reported values</h2>
+      <p class="hint">Click a result to list those values.</p>
+      <div class="donut-wrap"><svg id="donut" width="150" height="150" viewBox="0 0 150 150" role="img" aria-label="Results"></svg><ul class="legend" id="legend"></ul></div>
+    </div>
+    <div class="card">
+      <h2>By section</h2>
+      <p class="hint">Share of values matching mSCP. Click to filter.</p>
+      <div class="hbar" id="sections"></div>
+    </div>
+    <div class="card">
+      <h2>Differs most often</h2>
+      <p class="hint">Number of Macs. Click to see the values.</p>
+      <div class="hbar" id="top"></div>
+    </div>
+  </section>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tabValues" aria-selected="true">Values<span class="count" id="countValues"></span></button>
+    <button class="tab" role="tab" id="tabRules" aria-selected="false">Rules<span class="count" id="countRules"></span></button>
+    <button class="tab" role="tab" id="tabMacs" aria-selected="false">Macs<span class="count" id="countMacs"></span></button>
+  </div>
+  <section id="valuesView">
+    <div class="toolbar">
+      <label class="search"><span class="sr">Search</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Search Mac, serial, rule, title or value">
+      </label>
+      <label><span class="sr">Result</span><select id="fCmp"></select></label>
+      <label><span class="sr">Section</span><select id="fSection"></select></label>
+      <label><span class="sr">Mac</span><select id="fMac"></select></label>
+      <button class="btn" id="reset" type="button">Reset</button>
+    </div>
+    <div class="chips" id="chips"></div><div style="height:10px"></div>
+    <div class="tblwrap"><table id="valTable"><thead><tr>
+      <th data-k="device">Mac</th><th data-k="title">Rule</th><th data-k="section" class="hide-sm">Section</th>
+      <th data-k="readable">Reported</th><th data-k="mscp_expected" class="hide-sm">mSCP expects</th><th data-k="cmpRank">Result</th>
+    </tr></thead><tbody id="valBody"></tbody></table></div>
+  </section>
+  <section id="rulesView" hidden>
+    <div class="toolbar">
+      <label class="search"><span class="sr">Search rules</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="qr" type="search" placeholder="Search rule or title">
+      </label>
+    </div>
+    <div class="tblwrap"><table id="ruleTable"><thead><tr>
+      <th data-k="title">Rule</th><th data-k="section" class="hide-sm">Section</th><th data-k="delivery" class="hide-sm">Set by</th>
+      <th data-k="matches">Matches</th><th data-k="differs">Differs</th><th data-k="novalue">No value</th><th data-k="nvals" class="hide-sm">Values seen</th>
+    </tr></thead><tbody id="ruleBody"></tbody></table></div>
+  </section>
+  <section id="macsView" hidden>
+    <div style="height:14px"></div>
+    <div class="tblwrap"><table id="macTable"><thead><tr>
+      <th data-k="device">Mac</th><th data-k="user" class="hide-sm">User</th><th data-k="serial" class="hide-sm">Serial</th>
+      <th data-k="os" class="hide-sm">macOS</th><th data-k="matches">Matches</th><th data-k="differs">Differs</th><th data-k="novalue">No value</th><th data-k="collected" class="hide-sm">Collected</th>
+    </tr></thead><tbody id="macBody"></tbody></table></div>
+  </section>
+  <footer id="foot"></footer>
+</main>
+<div id="tip" role="tooltip"></div>
+<script id="report-data" type="application/json">__DATA__</script>
+<script>
+(() => {
+  "use strict";
+  const D = JSON.parse(document.getElementById("report-data").textContent);
+  const $ = (s) => document.querySelector(s);
+  const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const fmt = (t) => { if (!t) return "–"; const d = new Date(t); return isNaN(d) ? t : d.toLocaleString(undefined, { year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }); };
+  const pct = (a, b) => (b ? Math.round((a / b) * 100) : 0);
+  const CMP = {
+    "matches": { key: "matches", label: "Matches mSCP", cls: "cmp-matches", color: "var(--good)", rank: 3 },
+    "differs": { key: "differs", label: "Differs", cls: "cmp-differs", color: "var(--bad)", rank: 0 },
+    "no value": { key: "novalue", label: "No value", cls: "cmp-novalue", color: "var(--warn)", rank: 1 },
+    "not applicable": { key: "na", label: "Not applicable", cls: "cmp-na", color: "var(--none)", rank: 2 },
+    "unknown rule": { key: "unknown", label: "Not in baseline", cls: "cmp-unknown", color: "var(--none)", rank: 2 },
+  };
+  const badge = (c) => { const s = CMP[c] || CMP["unknown rule"]; return `<span class="badge ${s.cls}">${esc(s.label)}</span>`; };
+  const rows = D.rows.map((r, i) => ({ ...r, i, cmpRank: (CMP[r.compared] || {}).rank ?? 2, macKey: r.device + "|" + r.serial }));
+  const sections = [...new Set(rows.map((r) => r.section))].sort();
+  const macs = [...new Map(rows.map((r) => [r.macKey, r])).values()];
+  const rules = {};
+  rows.forEach((r) => {
+    const x = (rules[r.rule] ||= { rule: r.rule, title: r.title, section: r.section, delivery: r.delivery, matches: 0, differs: 0, novalue: 0, values: {} });
+    const k = (CMP[r.compared] || {}).key; if (k in x) x[k]++;
+    x.values[r.readable || "(empty)"] = (x.values[r.readable || "(empty)"] || 0) + 1;
+  });
+  Object.values(rules).forEach((x) => (x.nvals = Object.keys(x.values).length));
+  const macStats = macs.map((m) => {
+    const mine = rows.filter((r) => r.macKey === m.macKey);
+    const c = (k) => mine.filter((r) => r.compared === k).length;
+    return { ...m, matches: c("matches"), differs: c("differs"), novalue: c("no value") };
+  });
+
+  document.title = D.meta.title; $("#title").textContent = D.meta.title;
+  $("#meta").innerHTML = [`Tenant ${esc(D.meta.tenant)}`, esc(D.meta.baseline), `Generated ${esc(fmt(D.generated_at))}`].map((t) => `<span>${t}</span>`).join("");
+  $("#foot").innerHTML = `Generated by apple-intune-baseline from mSCP. Custom attributes: ${D.attributes.map(esc).join(", ")}.` +
+    (D.not_collected.length ? ` Not collected (per-user or no check): ${D.not_collected.map(esc).join(", ")}.` : "");
+
+  const st = { q: "", cmp: "", section: "", mac: "", sort: { k: "cmpRank", dir: 1 }, rq: "", rsort: { k: "differs", dir: -1 }, msort: { k: "differs", dir: -1 } };
+  const count = (c) => rows.filter((r) => r.compared === c).length;
+
+  // KPIs and charts
+  const k = (lab, val, sub, color, cmp) => `<button class="kpi${cmp === null ? " static" : ""}" type="button" ${cmp !== null ? `data-cmp="${esc(cmp)}"` : "disabled"}>
+    <div class="label">${color ? `<span class="dot" style="background:${color}"></span>` : ""}${lab}</div><div class="value">${val}</div><div class="sub">${sub}</div></button>`;
+  $("#kpis").innerHTML = k("Macs", macs.length, `${Object.keys(rules).length} rules reported`, "", null) +
+    k("Matches mSCP", count("matches"), `${pct(count("matches"), rows.length)}% of values`, "var(--good)", "matches") +
+    k("Differs", count("differs"), `${pct(count("differs"), rows.length)}% of values`, "var(--bad)", "differs") +
+    k("No value", count("no value"), "check printed nothing", "var(--warn)", "no value") +
+    (count("not applicable") ? k("Not applicable", count("not applicable"), "other architecture", "var(--none)", "not applicable") : "");
+
+  (function donut() {
+    const order = ["matches", "differs", "no value", "not applicable"].map((c) => [c, count(c)]).filter(([, v]) => v);
+    const total = rows.length, R = 62, r0 = 44, cx = 75, cy = 75; let a0 = -Math.PI / 2, out = "";
+    const gap = order.length > 1 ? 0.035 : 0;
+    order.forEach(([c, v]) => {
+      const a1 = a0 + (v / total) * Math.PI * 2, s = a0 + gap / 2, e = Math.max(s + 0.001, a1 - gap / 2), large = e - s > Math.PI ? 1 : 0;
+      const p = (rad, ang) => `${cx + rad * Math.cos(ang)} ${cy + rad * Math.sin(ang)}`;
+      const d = order.length === 1 ? `M ${cx} ${cy - R} A ${R} ${R} 0 1 1 ${cx - 0.01} ${cy - R} L ${cx - 0.01} ${cy - r0} A ${r0} ${r0} 0 1 0 ${cx} ${cy - r0} Z`
+        : `M ${p(R, s)} A ${R} ${R} 0 ${large} 1 ${p(R, e)} L ${p(r0, e)} A ${r0} ${r0} 0 ${large} 0 ${p(r0, s)} Z`;
+      out += `<path tabindex="0" role="button" d="${d}" fill="${CMP[c].color}" data-cmp="${esc(c)}" style="cursor:pointer"><title>${CMP[c].label}: ${v}</title></path>`;
+      a0 = a1;
+    });
+    out += `<text x="75" y="72" text-anchor="middle" font-size="24" font-weight="650" fill="var(--ink)">${total ? pct(count("matches"), total) + "%" : "–"}</text><text x="75" y="91" text-anchor="middle" font-size="11" fill="var(--ink-3)">match mSCP</text>`;
+    $("#donut").innerHTML = out;
+    $("#legend").innerHTML = ["matches", "differs", "no value", "not applicable"].filter((c) => c !== "not applicable" || count(c)).map((c) => `<li><button type="button" data-cmp="${esc(c)}"><span class="dot" style="background:${CMP[c].color}"></span>${CMP[c].label}<span class="n">${count(c)}</span></button></li>`).join("");
+  })();
+  $("#sections").innerHTML = sections.map((sec) => {
+    const rs = rows.filter((r) => r.section === sec), m = rs.filter((r) => r.compared === "matches").length,
+      nv = rs.filter((r) => r.compared === "no value").length, df = rs.filter((r) => r.compared === "differs").length;
+    const seg = (v, c) => (v ? `<i style="width:${(v / rs.length) * 100}%;background:${c}"></i>` : "");
+    return `<div class="row2" role="button" tabindex="0" data-section="${esc(sec)}" title="${esc(`${sec}: ${m} match, ${df} differ, ${nv} no value`)}"><span class="name">${esc(sec)}</span><span class="bar">${seg(m, "var(--good)")}${seg(nv, "var(--warn)")}${seg(df, "var(--bad)")}</span><span class="val">${pct(m, rs.length)}%</span></div>`;
+  }).join("") || '<div class="empty">No values reported yet.</div>';
+  const top = Object.values(rules).filter((x) => x.differs).sort((a, b) => b.differs - a.differs || a.rule.localeCompare(b.rule)).slice(0, 8);
+  const max = Math.max(1, ...top.map((x) => x.differs));
+  $("#top").innerHTML = top.map((x) => `<div class="row2" role="button" tabindex="0" data-rule="${esc(x.rule)}" title="${esc(x.rule)}"><span class="name">${esc(x.title || x.rule)}</span><span class="bar" style="background:transparent"><i style="width:${(x.differs / max) * 100}%;background:var(--bad);border-radius:4px"></i></span><span class="val">${x.differs}</span></div>`).join("")
+    || '<div class="empty">Nothing differs from mSCP.</div>';
+
+  const opt = (v, t, cur) => `<option value="${esc(v)}"${v === cur ? " selected" : ""}>${esc(t)}</option>`;
+  function filters() {
+    $("#fCmp").innerHTML = opt("", "All results", st.cmp) + Object.keys(CMP).filter((c) => count(c)).map((c) => opt(c, `${CMP[c].label} (${count(c)})`, st.cmp)).join("");
+    $("#fSection").innerHTML = opt("", "All sections", st.section) + sections.map((s) => opt(s, s, st.section)).join("");
+    $("#fMac").innerHTML = opt("", "All Macs", st.mac) + macs.map((m) => opt(m.macKey, m.device, st.mac)).join("");
+  }
+  const sortRows = (list, s) => list.sort((a, b) => { const x = a[s.k] ?? "", y = b[s.k] ?? ""; return (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y))) * s.dir; });
+  function filtered() {
+    const q = st.q.trim().toLowerCase();
+    return rows.filter((r) => (!q || [r.device, r.serial, r.rule, r.title, r.readable].some((v) => String(v || "").toLowerCase().includes(q)))
+      && (!st.cmp || r.compared === st.cmp) && (!st.section || r.section === st.section) && (!st.mac || r.macKey === st.mac) && (!st.rule || r.rule === st.rule));
+  }
+  function renderValues() {
+    const list = sortRows(filtered(), st.sort);
+    $("#countValues").textContent = `${list.length}/${rows.length}`;
+    $("#valBody").innerHTML = list.map((r) => `<tr><td>${esc(r.device)}</td><td><span style="font-weight:600">${esc(r.title || r.rule)}</span><span class="mono muted" style="display:block;font-size:11.5px">${esc(r.rule)}</span></td>
+      <td class="hide-sm muted">${esc(r.section)}</td><td class="val">${r.readable === "" ? '<span class="muted">(empty)</span>' : esc(r.readable)}</td><td class="hide-sm val muted">${esc(r.mscp_expected)}</td><td>${badge(r.compared)}</td></tr>`).join("")
+      || '<tr><td colspan="6" class="empty" style="text-align:center">No values match these filters.</td></tr>';
+    const c = [];
+    if (st.q) c.push(["q", `Search: ${st.q}`]); if (st.cmp) c.push(["cmp", `Result: ${CMP[st.cmp].label}`]);
+    if (st.section) c.push(["section", `Section: ${st.section}`]); if (st.mac) c.push(["mac", `Mac: ${st.mac.split("|")[0]}`]);
+    if (st.rule) c.push(["rule", `Rule: ${st.rule}`]);
+    $("#chips").innerHTML = c.map(([k, t]) => `<span class="chip">${esc(t)}<button type="button" data-clear="${k}" aria-label="Remove filter">✕</button></span>`).join("");
+  }
+  function renderRules() {
+    const q = st.rq.trim().toLowerCase();
+    const list = sortRows(Object.values(rules).filter((x) => !q || (x.rule + " " + x.title).toLowerCase().includes(q)), st.rsort);
+    $("#countRules").textContent = Object.keys(rules).length;
+    $("#ruleBody").innerHTML = list.map((x) => `<tr class="row" tabindex="0" data-rule="${esc(x.rule)}"><td><span style="font-weight:600">${esc(x.title || x.rule)}</span><span class="mono muted" style="display:block;font-size:11.5px">${esc(x.rule)}</span></td>
+      <td class="hide-sm muted">${esc(x.section)}</td><td class="hide-sm muted">${esc(x.delivery)}</td><td class="num">${x.matches || "–"}</td>
+      <td class="num">${x.differs ? `<span class="badge cmp-differs">${x.differs}</span>` : "–"}</td><td class="num">${x.novalue ? `<span class="badge cmp-novalue">${x.novalue}</span>` : "–"}</td>
+      <td class="hide-sm"><div class="dist">${Object.entries(x.values).slice(0, 4).map(([v, n]) => `<span class="val">${esc(v.length > 40 ? v.slice(0, 37) + "…" : v)} ×${n}</span>`).join("")}</div></td></tr>`).join("");
+  }
+  function renderMacs() {
+    $("#countMacs").textContent = macs.length;
+    $("#macBody").innerHTML = sortRows(macStats.slice(), st.msort).map((m) => `<tr class="row" tabindex="0" data-mac="${esc(m.macKey)}"><td>${esc(m.device)}</td><td class="hide-sm muted">${esc(m.user || "–")}</td><td class="hide-sm mono">${esc(m.serial || "–")}</td><td class="hide-sm">${esc(m.os || "–")}</td>
+      <td class="num">${m.matches}</td><td class="num">${m.differs ? `<span class="badge cmp-differs">${m.differs}</span>` : "–"}</td><td class="num">${m.novalue ? `<span class="badge cmp-novalue">${m.novalue}</span>` : "–"}</td><td class="hide-sm muted">${esc(fmt(m.collected))}</td></tr>`).join("");
+  }
+  function render() { filters(); renderValues(); renderRules(); renderMacs(); }
+  function tab(which) {
+    [["Values", "values"], ["Rules", "rules"], ["Macs", "macs"]].forEach(([T, t]) => { $(`#tab${T}`).setAttribute("aria-selected", t === which); $(`#${t}View`).hidden = t !== which; });
+  }
+  function goValues(patch) { Object.assign(st, { cmp: "", section: "", mac: "", rule: "" }, patch); tab("values"); render(); $("#valuesView").scrollIntoView({ behavior: "smooth", block: "start" }); }
+  const on = (sel, fn) => document.addEventListener("click", (e) => { const el = e.target.closest(sel); if (el) fn(el); });
+  const onKey = (sel, fn) => document.addEventListener("keydown", (e) => { if ((e.key === "Enter" || e.key === " ") && e.target.matches(sel)) { e.preventDefault(); fn(e.target); } });
+  on("[data-cmp]", (el) => goValues({ cmp: el.dataset.cmp })); onKey("[data-cmp]", (el) => goValues({ cmp: el.dataset.cmp }));
+  on("#sections [data-section]", (el) => goValues({ section: el.dataset.section }));
+  on("#top [data-rule], #ruleBody [data-rule]", (el) => goValues({ rule: el.dataset.rule }));
+  onKey("#top [data-rule], #ruleBody [data-rule]", (el) => goValues({ rule: el.dataset.rule }));
+  on("#macBody [data-mac]", (el) => goValues({ mac: el.dataset.mac })); onKey("#macBody [data-mac]", (el) => goValues({ mac: el.dataset.mac }));
+  on("[data-clear]", (el) => { const k = el.dataset.clear; if (k === "q") { st.q = ""; $("#q").value = ""; } else st[k] = ""; render(); });
+  on("#valTable th", (el) => { const k = el.dataset.k; st.sort = { k, dir: st.sort.k === k ? -st.sort.dir : 1 }; renderValues(); });
+  on("#ruleTable th", (el) => { const k = el.dataset.k; st.rsort = { k, dir: st.rsort.k === k ? -st.rsort.dir : -1 }; renderRules(); });
+  on("#macTable th", (el) => { const k = el.dataset.k; st.msort = { k, dir: st.msort.k === k ? -st.msort.dir : -1 }; renderMacs(); });
+  on("#tabValues", () => tab("values")); on("#tabRules", () => tab("rules")); on("#tabMacs", () => tab("macs"));
+  on("#reset", () => { $("#q").value = ""; goValues({ q: "" }); });
+  $("#q").addEventListener("input", (e) => { st.q = e.target.value; renderValues(); });
+  $("#qr").addEventListener("input", (e) => { st.rq = e.target.value; renderRules(); });
+  $("#fCmp").addEventListener("change", (e) => { st.cmp = e.target.value; renderValues(); });
+  $("#fSection").addEventListener("change", (e) => { st.section = e.target.value; renderValues(); });
+  $("#fMac").addEventListener("change", (e) => { st.mac = e.target.value; renderValues(); });
+  on("#theme", () => { const r = document.documentElement; const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; r.dataset.theme = dark ? "light" : "dark"; });
+  on("#exportCsv", () => {
+    const head = ["device", "serial", "section", "rule", "title", "reported", "mscp_expects", "result"];
+    const lines = [head.join(",")].concat(filtered().map((r) => [r.device, r.serial, r.section, r.rule, r.title, r.readable, r.mscp_expected, r.compared].map((v) => `"${String(v ?? "").replace(/"/g, '""')}"`).join(",")));
+    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["﻿" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" }));
+    a.download = "inventory-view.csv"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  });
+  render();
+})();
+</script>
+</body>
+</html>
